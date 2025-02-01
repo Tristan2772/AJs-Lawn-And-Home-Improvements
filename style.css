@@ -193,7 +193,7 @@ section {
 	background-repeat: no-repeat;
 	background-size: cover;
 	position: relative;
-	min-height: 100svh;
+	height: 100svh;
 }
 
 #hero .hero-overlay {
