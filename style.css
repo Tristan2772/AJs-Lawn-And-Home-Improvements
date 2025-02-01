@@ -183,7 +183,7 @@ nav a {
 /*---------- hero-------------*/
 
 section {
-	min-height: 100lvh;
+	min-height: 100svh;
 }
 
 #hero .hero-img {
@@ -193,7 +193,7 @@ section {
 	background-repeat: no-repeat;
 	background-size: cover;
 	position: relative;
-	min-height: 100lvh;
+	min-height: 100svh;
 }
 
 #hero .hero-overlay {
