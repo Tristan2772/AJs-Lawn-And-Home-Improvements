@@ -683,7 +683,7 @@ section#contact {
 	width: 100%;
 	background-color: var(--primary);
 	color: white;
-	padding: 80px 80px 120px;
+	padding: 80px 0 120px;
 }
 
 #contact h2 {
