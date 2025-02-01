@@ -454,6 +454,7 @@ div#odd a {
 /* ---------- featured ---------*/
 .featured-service {
 	width: 100%;
+	padding-top: 25lvh;
 	background-color: var(--main-bg);
 	position: relative;
 }
@@ -677,11 +678,68 @@ div#odd a {
 }
 
 /* ---------contact----------*/
-#contact {
+section#contact {
+	min-height: 80lvh;
 	width: 100%;
 	background-color: var(--primary);
 	color: white;
 	padding: 80px 80px 120px;
+}
+
+#contact h2 {
+	font-size: 38px;
+	text-align: center;
+	padding-bottom: 40px;
+	width: 90%;
+	margin: 0 auto;
+}
+#contact p {
+	margin: 0 auto;
+	font-size: 26px;
+	text-align: center;
+	width: 85%;
+	line-height: 1.6;
+}
+#contact p:nth-child(2) {
+	padding-bottom: 40px;
+}
+#contact a {
+	color: white;
+	transition: 0.3s ease-in-out;
+	text-decoration: none;
+	border-bottom: 3px solid white;
+}
+#contact a:hover {
+	border-bottom: 3px solid var(--secondary);
+	color: var(--secondary);
+}
+#contact p:nth-child(3){
+	padding-bottom: 20px;
+}
+#contact .social{
+    text-align: center;
+    padding-bottom: 25px;
+    color: white;
+}
+#contact .social a{
+    font-size: 25px;
+    color: white;
+    border: 3px solid white;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 10px;
+    transition: 0.3s ease-in-out;
+}
+#contact .social a:hover{
+    transform: scale(1.2);
+    background-color: var(--primary);
+    color: var(--secondary);
+    box-shadow: 0 0 25px var(--secondary);
+	border-color: var(--secondary);
 }
 
 #contact h2 {
@@ -734,7 +792,7 @@ div#odd a {
 #about p {
 	width: 90%;
 	font-size: 24px;
-	line-height: 1.4;
+	line-height: 1.6;
 	margin: 0 auto;
 }
 
@@ -776,6 +834,10 @@ footer a {
 
 ul.footer-list {
 	list-style-type: none;
+}
+
+footer ul li {
+	line-height: 1.6;
 }
 
 footer #footer-btm {
