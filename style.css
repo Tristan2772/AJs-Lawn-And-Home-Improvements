@@ -742,6 +742,28 @@ section#contact {
 	border-color: var(--secondary);
 }
 
+#contact h2 {
+	font-size: 38px;
+	text-align: center;
+	padding-bottom: 40px;
+	width: 90%;
+	margin: 0 auto;
+}
+#contact p {
+	margin: 0 auto;
+	font-size: 26px;
+	text-align: center;
+	width: 90%;
+}
+#contact a {
+	color: white;
+	transition: 0.3s ease-in-out;
+	text-decoration: none;
+	border-bottom: 3px solid white;
+}
+#contact a:hover {
+	border-bottom: 3px solid var(--secondary);
+}
 
 /*--------- About -----------*/
 #about {
@@ -823,6 +845,7 @@ footer #footer-btm {
 	text-align: center;
 	background-color: darkslategray;
 	padding: 30px auto;
+	line-height: 1.4;
 	font-size: 20px;
 }
 
