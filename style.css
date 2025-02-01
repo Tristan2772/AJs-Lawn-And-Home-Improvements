@@ -683,7 +683,7 @@ section#contact {
 	width: 100%;
 	background-color: var(--primary);
 	color: white;
-	padding: 80px 0 120px;
+	padding: 80px 40px 120px;
 }
 
 #contact h2 {
@@ -756,7 +756,6 @@ section#about {
 	font-size: 36px;
 	margin: 0 auto;
 }
-
 #about img {
 	width: 150px;
 	height: 150px;
@@ -766,8 +765,8 @@ section#about {
 	left: 50;
 	transform: translate(-50%, -50%);
 }
-
 #about p {
+	text-align: center;
 	width: 90%;
 	font-size: 26px;
 	line-height: 1.6;
