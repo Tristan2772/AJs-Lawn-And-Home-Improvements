@@ -5,43 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AJ's Lawn and Home Improvements</title>
     <link rel="shortcut icon" href="img/Ajs_logo1.png" type="image/x-icon">
+
     <link rel="stylesheet" href="style.css">
+
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+        
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Itim&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 </head>
 
+ 
 <body>
     <!-- ----------- Nav -------------- -->
     <header>
         <nav>
             <a class="nav-block" href="#">
-                <img src="img/Ajs_logo1.png" alt="AJ's Lawn and Home Improvements Logo">
+                <img src="img/Ajs_logo1.png" alt="AJ's Lawn and Home Improvements Logo" loading="lazy">
                 <h1>AJ's Lawn and
                     <br>Home Improvements
                 </h1>
             </a>
 
-            <i id="menu-icon" class='bx bx-menu'></i>
-            <div id="hamburger-menu" class="nav-block">
-                <div class="nav-dropdown">Lawn Services 
-                    <i class='bx bx-chevron-down'></i>
-                    <ul>
+            <i id="menu-icon" class='bx bx-menu' tabindex="0"></i>
+            <div id="hamburger-menu" class="nav-block">                
+                <details class="nav-dropdown" id="lawn-dropdown">
+                    <summary>Lawn Services
+                        <i class='bx bx-chevron-down'></i>
+                    </summary>
+                    
+                    <ul class="dropdown">
                         <li><a href="AJsmowservice.html">Mow Package</a></li>
                         <li><a href="AJsgardenservice.html">Garden Bed Cleanup</a></li>
                         <li><a href="AJsbushandtreetrimmingservices.html">Bush And Tree Trimming</a></li>
                     </ul>
-                </div>
-                
-                <div class="nav-dropdown">Home Services
-                    <i class='bx bx-chevron-down'></i>
+                </details>
+
+                <details class="nav-dropdown" id="home-dropdown">
+                    <summary>Home Services
+                        <i class='bx bx-chevron-down'></i>
+                    </summary>
+
                     <ul class="dropdown">
-                        <li><a href="AJspaintservices.html">Interior & Exterior Painting</a></li>
-                        <li><a href="AJsfencerepairservices.html">Wood Fence Repair</a></li>
                         <li><a href="AJsguttercleaningservices.html">Gutter Cleaning</a></li>
+                        <li><a href="AJsfencerepairservices.html">Wood Fence Repair</a></li>
+                        <li><a href="AJspaintservices.html">Interior & Exterior Painting</a></li>
                     </ul>
-                </div>
+                </details>
                 
     
                 <a href="tel:+14059820906" class="nav-btn">Get a Free Quote!</a>
@@ -50,12 +61,12 @@
     </header>
 
     <!-- ---------- Hero -------------- -->
+    <main>
     <section id="hero">
-        <div class="hero-img">
+        <div class="hero-container">
+            <div role="presentation" class="hero-img"></div>
             <div class="hero-overlay">
-                <div>
-                    <h2>We make a house a home</h2>
-                </div>
+                <h2>We make a house a home</h2>
                 <p>Offering friendly and efficient lawn care and home improvement services in Oklahoma City, OK and surrounding areas.</p>
                 <a class="call-btn" href="tel:+14059820906">Call (405) 982-0906</a>
             </div>
@@ -74,21 +85,30 @@
         <h2>Looking to get your lawn serviced in Oklahoma City, OK? </h2>
         <div class="services-list">
             <div class="card">
-                <div class="service-img" id="mow-img"></div>
-                <h3>Mow Package</h3>
-                <p>We will come out to mow and edge your lawn quickly and efficiently, leaving no blade uncut.</p>
+                <div class="service-img mow-img" tabindex="0"></div>
+                <div class="card-content">
+                    <h3>Mow Package</h3>
+                    <p>We will come out to mow and edge your lawn quickly and efficiently, leaving no blade uncut.</p>
+                    <a href="AJsmowservice.html">Learn More!</a>
+                </div>
             </div>
 
             <div class="card">
-                <div class="service-img" id="garden-img"></div>
-                <h3>Garden Bed Cleanup</h3>
-                <p>Garden bed got out of hand? AJ's is here to help you get it back under control.</p>
+                <div class="service-img garden-img" tabindex="0"></div>
+                <div class="card-content">
+                    <h3>Garden Bed Cleanup</h3>
+                    <p>Garden bed got out of hand? AJ's is here to help you get it back under control.</p>
+                    <a href="AJsgardenservice.html">Learn More!</a>
+                </div>
             </div>
             
             <div class="card">
-                <div class="service-img" id="bush-img"></div>
-                <h3>Bush & Tree Trimming</h3>
-                <p>Are your tree limbs too long and your bushes too... bushy? Our experts are ready to cut them back to make your house a home.</p>
+                <div class="service-img bush-img" tabindex="0"></div>
+                <div class="card-content">
+                    <h3>Bush & Tree Trimming</h3>
+                    <p>Are your tree limbs too long and your bushes too... bushy? Our experts are ready to cut them back.</p>
+                    <a href="AJsbushandtreetrimmingservices.html">Learn More!</a>
+                </div>
             </div>
         </div>
     </section>
@@ -99,26 +119,35 @@
         <h2>Or home improvement services in Oklahoma City, OK?</h2>
         <div class="services-list">
             <div class="card">
-                <div class="service-img" id="paint-img"></div>
-                <h3>Interior & Exterior Painting</h3>
-                <p>Whether inside or outside, we're willing to help you make that renovation and paint your house.</p>
+                <div class="service-img gutter-img" tabindex="0"></div>
+                <div class="card-content">
+                    <h3>Gutter Cleaning</h3>
+                    <p>We make it easy to keep your head out the gutter. We simply clean it so you don't have to.</p>
+                    <a href="AJsguttercleaningservices.html">Learn More!</a>
+                </div>
             </div>
             <div class="card">
-                <div class="service-img" id="fence-img"></div>
-                <h3>Wood Fence Repair</h3>
-                <p>With Oklahoma's tempermental weather, it's only a matter of time before that fence comes down. We're here to put it back up.</p>
+                <div class="service-img fence-img" tabindex="0"></div>
+                <div class="card-content">
+                    <h3>Wood Fence Repair</h3>
+                    <p>With Oklahoma's weather, it's only a matter of time before that fence comes down. We're here to put it back up.</p>
+                    <a href="AJsfencerepairservices.html">Learn More!</a>
+                </div>
             </div>
             <div class="card">
-                <div class="service-img" id="gutter-img"></div>
-                <h3>Gutter Cleaning</h3>
-                <p>We make it easy to keep your head out the gutter. We simply clean it so you can don't have to.</p>
+                <div class="service-img paint-img" tabindex="0"></div>
+                <div class="card-content">
+                    <h3>Interior & Exterior Painting</h3>
+                    <p>Whether inside or outside, we're willing to help you make that renovation and paint your house.</p>
+                    <a href="AJspaintservices.html">Learn More!</a>
+                </div>
             </div>
         </div>
 
         <!-- ------- Odd Jobs -------- -->
         <div id="odd">
             <h2>Not Sure?</h2>
-            <p>Got a job that you're not sure we'll take? Give us a call and we will give you a free quote on any and ALL jobs.</p>
+            <p>Got a job that you're not sure we'll take? Give us a call and we will give you a free quote on any and ALL jobs. And yes, we do mean ALL jobs.</p>
             <a class="call-btn" href="tel:+14059820906">Call (405) 982-0906</a>
         </div>
     </section>
@@ -129,17 +158,17 @@
         <h2>What to Expect</h2>
         <div class="expect-card-container">
             <div class="expect-card">
-                <i class='bx bx-phone-call'></i>
+                <i class='bx bx-phone-call' alt="phone"></i>
                 <h3>Connect</h3>
                 <p>Call or email us and we will get in contact with you.</p>
             </div>
             <div class="expect-card">
-                <i class='bx bx-calendar'></i>
+                <i class='bx bx-calendar' alt="calendar"></i>
                 <h3>Schedule</h3>
                 <p>We'll communicate a day that works with your schedule.</p>
             </div>
             <div class="expect-card">
-                <i class='bx bx-hard-hat'></i>
+                <i class='bx bx-hard-hat' alt="hard-hat"></i>
                 <h3>Relax</h3>
                 <p>Sit back, relax, and get serviced on your own time.</p>
             </div>
@@ -151,7 +180,7 @@
     <section id="why">
         <h2>Why AJ's?</h2>
         <div id="why-container">
-            <img src="img/Background2.jpg" alt="house">
+            <img src="img/Background2.jpg" loading="lazy" alt="nice clean house">
             <div>
                 <p>While we may cut grass, we do NOT cut corners. We take pride in our work ethic and to stand out from the crowd, we make sure our work does too. We build connections with our customers by treating them as we would our neighbor, simply because... they are. We like to bounce ideas off our customers as a team, coming up with the best possible solution to make your house a home.
                 </p>
@@ -160,7 +189,7 @@
     </section>
 
 
-    <!-- ------- Reviews -------- -->
+    <!-- ------- Testimonials -------- -->
     <section id="testimonials">
         <h2>What Our Customers Have To Say</h2>
         <div class="testimonials-container">
@@ -170,7 +199,7 @@
             </div>
             <div class="testimonial">
                 <p class="name">Kathy P. -</p>
-                <p class="review">"We were very pleased to have our house painted by Aj's Lawn and Home Improvements! They did a <span class="em">quick and efficient job.</span> Not only did they do a fantastic job with the paint, but they also made sure to clean up after themselves and were very respectul of our property. <span class="em">Our house looks amazing,</span> and I highly recommend their services. Thank you for a job well done!"</p>
+                <p class="review">"We were very pleased to have our house painted by AJ's Lawn and Home Improvements! They did a <span class="em">quick and efficient job.</span> Not only did they do a fantastic job with the paint, but they also made sure to clean up after themselves and were very respectul of our property. <span class="em">Our house looks amazing,</span> and I highly recommend their services. Thank you for a job well done!"</p>
             </div>
             <div class="testimonial">
                 <p class="name">Brandi H. -</p>
@@ -179,31 +208,85 @@
         </div>
     </section>
 
-<!-- --------- CTA ------------ -->
+    <!-- --------- CTA ------------ -->
     <section id="contact">
         <h2>Contact Us!</h2>
         <p>Call us at 
             <a href="tel:+14059820906">(405) 982-0906</a> 
             or email  us at  
-            <a href="mailto:ajslawnandhomeimprovementservices@gmail.com">ajslawnandhomeimprovementservices@gmail.com</a>
+            <a href="mailto:ajslawnandhomeimprovementservices@gmail.com">AJs lawn and home improvement services@gmail.com</a>
             for a free quote on any job.
         </p>
         <p>Or follow us on:</p>
         <div class="social">
-            <a target="_blank" href="https://www.facebook.com/profile.php?id=61559589351404"><i class='bx bxl-meta'></i></a>
-            <a target="_blank" href="https://www.instagram.com/_fresky_/"><i class='bx bxl-instagram-alt'></i></a>
+            <a target="_blank" href="https://www.facebook.com/profile.php?id=61559589351404" alt="AJs facebook page" aria-label="check out AJ's Facebook page" title="check out AJ's Facebook page"><i class='bx bxl-meta'></i></a>
+            <a target="_blank" href="https://www.instagram.com/_fresky_/" alt="AJs Instagram" aria-label="Check out AJ's Instagram page" title="Check out AJ's Instagram page"><i class='bx bxl-instagram-alt'></i></a>
         </div>
     </section>
 
     <!-- ------- About ------- -->
     <section id="about">
-        <img src="img/Ajs_logo1.png" alt="aj's logo">
-        <h2 class="footer-h2">About Us</h2>
-        <p>AJ's Lawn Care and Home Improvements is a friendly, small, family-owned and operated business based out of Midwest City, Oklahoma. We have a small team of experts with experience in multiple fields. We've been cutting yards and doing handiwork since 2020, but took the next step to officially make it a business in March 2024. We appreciate you taking the time to check out our business.</p>
+        <img src="img/Ajs_logo1.png" alt="aj's logo" loading="lazy">
+        <h2>About Us</h2>
+        <p>We are a small, friendly, family-owned and operated business based in Midwest City, Oklahoma. We have been cutting yards and doing handiwork with our team of experts since 2020. We took the next step to officially make it a business in March 2024. Since then, we have continued to grow our team and skill set so that we can put more smiles on the faces of the people in our community. Thank you for taking the time to check us out.</p>
     </section>
+    </main>
 
-<!-- --------- Footer -------- -->
+    <!-- --------- Footer -------- -->
     <footer>
+
+        <section id="faq">
+            <h2>Frequently Asked Questions</h2>
+            <details class="question">
+                <summary>
+                    <i class='bx bx-chevron-down'></i>
+                    <p>What qualifies as an odd job?</p>
+                </summary>
+                <div class="answer">
+                    <hr>
+                    <p>
+                        Any job that you don't want to do! Whether it's easy or hard, we're willing to talk it through and see what we can do to make your house a home.
+                    </p>
+                </div>
+            </details>
+            <details class="question">
+                <summary>
+                    <i class='bx bx-chevron-down'></i>
+                    <p>How much do I have to pay?</p>
+                </summary>
+                <div class="answer">
+                    <hr>
+                    <p>
+                        Just as the work required from job to job will vary, the pay varies too. This allows us to service you for the fairest rate on our work.
+                    </p>
+                </div>            
+            </details>
+            <details class="question">
+                <summary>
+                    <i class='bx bx-chevron-down'></i>
+                    <p>Is my odd job too big or too small to take?</p>
+                </summary>
+                <div class="answer">
+                    <hr>
+                    <p>
+                        There is no job that is too big or too small for us. We do everything from cutting grass and putting up shelves to building full on room additions.
+                    </p>
+                </div>            
+            </details>
+            <details class="question">
+                <summary>
+                    <i class='bx bx-chevron-down'></i>
+                    <p>Will I ever have surprise charges?</p>
+                </summary>
+                <div class="answer">
+                    <hr>
+                    <p>
+                        NO! We will never spring extra charges on you. We only charge extra for cutting overgrown yards and cutting tree limbs that are next to powerlines. However, these charges will be brought up when we give you an estimate. 
+                    </p>
+                </div>            
+            </details>
+        </section>
+
         <div class="footer-container">
             <!-- Locations -->
             <div id="locations" class="shared">
@@ -216,24 +299,26 @@
                     <li>Shawnee, OK</li>
                 </ul>
             </div>
+
+            <hr class="shared">
     
             <!-- Hours -->
             <div id="hours" class="shared">
                 <h2 class="footer-h2">Hours: </h2>
                 <ul class="footer-list">
-                    <li>Sunday: 9am - 8pm</li>
-                    <li>Monday: 9am - 8pm</li>
-                    <li>Tuesday: 9am - 8pm</li>
-                    <li>Wednesday: 9am - 8pm</li>
-                    <li>Thursday: 9am - 8pm</li>
-                    <li>Friday: 9am - 8pm</li>
-                    <li>Saturday: 9am - 8pm</li>
+                    <li>Sun: 9am - 8pm</li>
+                    <li>Mon: 9am - 8pm</li>
+                    <li>Tue: 9am - 8pm</li>
+                    <li>Wed: 9am - 8pm</li>
+                    <li>Thu: 9am - 8pm</li>
+                    <li>Fri: 9am - 8pm</li>
+                    <li>Sat: 9am - 8pm</li>
                 </ul>
             </div>
         </div>
-        <div id="footer-btm">&copy;2024 AJ's Lawn and Home Improvement Services All Rights Reserved</div>
+        <div id="footer-btm">&copy;2024-2025 AJ's Lawn and Home Improvement Services All Rights Reserved</div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 
 </body>
