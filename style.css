@@ -330,93 +330,172 @@ a.call-btn:hover, a.call-btn:focus {
 	background-color: var(--second-bg);
 	border: 3px solid var(--primary);
 }
-.mow-img {
+.mow-b {
+	opacity: 1;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 	background-image: url(img/AJs_Mow_Before.jpg);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
 }
-.mow-img:hover,
-.mow-img:focus {
+.mow-a{
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 	background: url(img/AJs_Mow_After.jpg);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
 }
-.garden-img {
+.garden-b {
+	opacity: 1;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 	background: url(img/AJs_Garden_Before.jpg);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
 }
-.garden-img:hover,
-.garden-img:focus {
+.garden-a{
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 	background: url(img/AJs_Garden_After.jpg);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
 }
-.bush-img {
+.bush-b {
+	opacity: 1;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 	background: url(img/AJs_Bush_Before.jpg);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
 }
-.bush-img:hover,
-.bush-img:focus {
+.bush-a {
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 	background: url(img/AJs_Bush_After.jpg);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
 }
-.paint-img {
+
+.paint-b {
+	opacity: 1;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 	background: url(img/AJs_Paint_Before.jpg);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
 }
-.paint-img:hover,
-.paint-img:focus {
+.paint-a{
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 	background: url(img/AJs_Paint_After.jpg);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
 }
-.fence-img {
+.fence-b {
+	opacity: 1;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 	background: url(img/AJs_Fence_Before.jpg);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
 }
-.fence-img:hover,
-.fence-img:focus {
-	background: url(img/AJs_Fence_After.jpeg);
+.fence-a{
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url(img/AJs_Fence_After.jpg);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
 }
-.gutter-img {
-	background: url(img/AJs_Gutter_Before.jpeg);
+.gutter-b {
+	opacity: 1;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url(img/AJs_Gutter_Before.jpg);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
 }
-.gutter-img:hover,
-.gutter-img:focus {
+.gutter-a{
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 	background: url(img/AJs_Gutter_After.jpg);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
 }
+
 .service-img {
 	width: 90%;
 	max-width: 425px;
 	height: 300px;
 	margin: var(--center);
 	transition: 0.4s ease-in-out;
-	border-radius: 20px;
 	flex-grow: 0;
 	position: relative;
+}
+.service-img div {
+	transition: opacity 0.4s ease-out;
+	border-radius: 20px;
+}
+.service-img:hover div:nth-child(1),
+.service-img:focus div:nth-child(1){
+	opacity: 0;
+}
+.service-img:hover div:nth-child(2),
+.service-img:focus div:nth-child(2){
+	opacity: 1;
 }
 .service-img::after {
 	content: "(hover over me)";
