@@ -133,6 +133,10 @@ nav a {
 	border-bottom: 3px solid transparent;
 	transition: transform 0.3s ease-in-out, border-bottom 0.3s ease-in-out;
 }
+
+summary::-webkit-details-marker{
+	display: none;
+}
 .nav-dropdown i {
 	transform: rotate(90deg);
 	transition: transform 0.3s ease-in-out;
@@ -188,23 +192,23 @@ nav a {
 /*---------- hero-------------*/
 
 section {
-	min-height: 100lvh;
+	min-height: 100svh;
 }
 
 #hero .hero-container {
 	position: relative;
 	width: 100%;
-	height: 100lvh;
+	height: 100svh;
 }
 
 #hero .hero-img {
-	background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+	background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
 		url(img/Background1.jpg);
 	background-position: top;
 	background-repeat: no-repeat;
 	background-size: cover;
 	position: relative;
-	height: 100lvh;
+	height: 100svh;
 }
 
 #hero .hero-overlay {
@@ -826,7 +830,7 @@ div#odd p {
 
 /* ---------contact----------*/
 section#contact {
-	min-height: 50lvh;
+	min-height: 50svh;
 	width: 100%;
 	background-color: var(--primary);
 	color: white;
@@ -898,7 +902,7 @@ section#about {
 	text-align: center;
 	position: relative;
 	background-color: var(--second-bg);
-	min-height: 50lvh;
+	min-height: 50svh;
 }
 #about img {
 	width: 150px;
@@ -933,7 +937,7 @@ footer {
 }
 
 section#faq {
-	min-height: 50lvh;
+	min-height: 50svh;
 	background-color: var(--main-bg);
 }
 #faq h2 {
