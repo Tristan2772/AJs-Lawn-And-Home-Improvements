@@ -192,13 +192,13 @@ summary::-webkit-details-marker{
 /*---------- hero-------------*/
 
 section {
-	min-height: 100svh;
+	min-height: calc(var(--vh) * 100);
 }
 
 #hero .hero-container {
 	position: relative;
 	width: 100%;
-	min-height: 100svh;
+	min-height: calc(var(--vh) * 100);
 }
 
 #hero .hero-img {
@@ -208,7 +208,7 @@ section {
 	background-repeat: no-repeat;
 	background-size: cover;
 	position: relative;
-	min-height: 100svh;
+	min-height: calc(var(--vh) * 100);
 }
 
 #hero .hero-overlay {
@@ -830,7 +830,7 @@ div#odd p {
 
 /* ---------contact----------*/
 section#contact {
-	min-height: 50svh;
+	min-height: calc(var(--vh) * 50);
 	width: 100%;
 	background-color: var(--primary);
 	color: white;
@@ -901,7 +901,7 @@ section#about {
 	text-align: center;
 	position: relative;
 	background-color: var(--second-bg);
-	min-height: 50svh;
+	min-height: calc(var(--vh) * 50);
 }
 #about img {
 	width: 150px;
@@ -936,7 +936,7 @@ footer {
 }
 
 section#faq {
-	min-height: 50svh;
+	min-height: calc(var(--vh) * 50);
 	background-color: var(--main-bg);
 }
 #faq h2 {
