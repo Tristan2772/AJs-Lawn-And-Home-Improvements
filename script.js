@@ -97,7 +97,9 @@ function listInit() {
 		question.classList.remove("active");
 	});
 }
-listInit();
+
+//on each page load, run func to smooth out transitions
+window.addEventListener("DOMContentLoaded", listInit());
 
 faqQuestions.forEach((question) => {
 	question.addEventListener("click", function (event) {
@@ -121,11 +123,6 @@ faqQuestions.forEach((question) => {
 			this.classList.add("active");
 			this.open = open;
 		}
-	});
-	question.addEventListener("blur", function () {
-		let sumEl = question.querySelector("summary");
-		sumEl.blur();
-		console.log("blur");
 	});
 });
 
