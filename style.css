@@ -84,7 +84,7 @@ a.nav-block h1 {
 }
 
 a.nav-block h1:hover,
-a.nav-block:focus h1 {
+a.nav-block:focus-visible h1 {
 	transform: scale(1.05);
 }
 
@@ -99,7 +99,7 @@ nav a {
 	height: 100px;
 	transition: transform 0.3s ease-out;
 }
-.nav-block img:hover, .nav-block:focus img {
+.nav-block img:hover, .nav-block:focus-visible img {
 	transform: scale(1.1);
 }
 .nav-btn {
@@ -111,7 +111,7 @@ nav a {
 }
 
 .nav-btn:hover,
-.nav-btn:focus {
+.nav-btn:focus-visible {
 	transform: scale(1.1);
 	border: 3px solid var(--secondary);
 	color: var(--secondary);
@@ -185,7 +185,7 @@ summary::-webkit-details-marker{
 	border-bottom: 3px solid transparent;
 	transition: border-bottom 0.3s ease;
 }
-.nav-dropdown ul li a:hover, .nav-dropdown ul li a:focus {
+.nav-dropdown ul li a:hover, .nav-dropdown ul li a:focus-visible {
 	border-bottom: 3px solid var(--primary);
 }
 
@@ -256,10 +256,10 @@ a.call-btn {
 	text-align: center;
 	display: block;
 	margin: var(--center);
-	transition: transform 0.3s ease;
+	transition: transform 0.3s ease, color 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
 }
 
-a.call-btn:hover, a.call-btn:focus {
+a.call-btn:hover, a.call-btn:focus-visible {
 	transform: scale(1.1);
 	border: 3px solid var(--secondary);
 	color: var(--secondary);
@@ -329,7 +329,7 @@ a.call-btn:hover, a.call-btn:focus {
 }
 .services-list .card:hover,
 .services-list .card.active,
-.services-list .card:focus {
+.services-list .card:focus-visible {
 	transform: scale(1.05);
 	background-color: var(--second-bg);
 	border: 3px solid var(--primary);
@@ -494,11 +494,11 @@ a.call-btn:hover, a.call-btn:focus {
 	border-radius: 20px;
 }
 .service-img:hover div:nth-child(1),
-.service-img:focus div:nth-child(1){
+.service-img:focus-visible div:nth-child(1){
 	opacity: 0;
 }
 .service-img:hover div:nth-child(2),
-.service-img:focus div:nth-child(2){
+.service-img:focus-visible div:nth-child(2){
 	opacity: 1;
 }
 .service-img::after {
@@ -520,7 +520,7 @@ a.call-btn:hover, a.call-btn:focus {
 	opacity: 1;
 }
 .service-img:hover::after,
-.service-img:focus::after {
+.service-img:focus-visible::after {
 	content: "(hover over me)";
 	opacity: 0;
 }
@@ -558,7 +558,7 @@ a.call-btn:hover, a.call-btn:focus {
 	color: var(--primary);
 }
 .services-list a:hover,
-.services-list a:focus {
+.services-list a:focus-visible {
 	transform: scale(1.1);
 }
 .services-container a:active,
@@ -582,7 +582,7 @@ div#odd {
 }
 div#odd:hover,
 div#odd.active,
-div#odd:focus {
+div#odd:focus-visible {
 	transform: scale(1.05);
 	background-color: var(--second-bg);
 	border: 3px solid var(--primary);
@@ -693,7 +693,7 @@ div#odd p {
 
 .expect-card:hover,
 .expect-card.active,
-.expect-card:focus {
+.expect-card:focus-visible {
 	transform: scale(1.05);
 	background-color: var(--main-bg);
 	border: 3px solid var(--primary);
@@ -752,7 +752,7 @@ div#odd p {
 }
 #why-container img:hover,
 #why-container img.active,
-#why-container img:focus {
+#why-container img:focus-visible {
 	border-color: var(--primary);
 	transform: scale(1.05);
 }
@@ -802,7 +802,7 @@ div#odd p {
 
 .testimonial:hover,
 .testimonial.active,
-.testimonial:focus {
+.testimonial:focus-visible {
 	border: 3px solid var(--primary);
 	transform: scale(1.05);
 	background-color: var(--main-bg);
@@ -861,7 +861,7 @@ section#contact {
 	border-bottom: 3px solid white;
 }
 #contact a:hover,
-#contact a:focus {
+#contact a:focus-visible {
 	border-bottom: 3px solid var(--secondary);
 	color: var(--secondary);
 }
@@ -883,12 +883,11 @@ section#contact {
 	text-align: center;
 	border-radius: 50%;
 	margin: 0 10px;
-	transition: transform 0.3s ease-in-out;
+	transition: transform 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 #contact .social a:hover,
-#contact .social a:focus {
+#contact .social a:focus-visible {
 	transform: scale(1.2);
-	background-color: var(--primary);
 	color: var(--secondary);
 	box-shadow: 0 0 25px var(--secondary);
 	border-color: var(--secondary);
@@ -959,8 +958,9 @@ section#faq {
 	border-color: var(--primary);
 	padding: 0 0 var(--md-pad);
 }
-#faq details:hover,
-#faq details:has(:focus) {
+
+#faq details:hover, 
+#faq details:has(:focus-visible) {
 	border-color: var(--primary);
 }
 #faq summary {
@@ -976,9 +976,8 @@ section#faq {
 }
 #faq details.active summary p,
 #faq details summary:hover p,
-#faq details summary:focus p {
+#faq details summary:focus-visible p {
 	color: var(--primary);
-	transform: scale(1.05);
 }
 #faq details summary i {
 	transform: rotate(-90deg);
@@ -989,7 +988,7 @@ section#faq {
 	color: var(--primary);
 }
 #faq details summary:hover i,
-#faq details summary:focus i {
+#faq details summary:focus-visible i {
 	color: var(--primary);
 }
 #faq details .answer {
@@ -1250,7 +1249,7 @@ footer ul li {
 		opacity: 1;
 	}
 	.service-img:hover::after,
-	.service-img:focus::after {
+	.service-img:focus-visible::after {
 		content: "(tap here)";
 		opacity: 0;
 	}
@@ -1407,8 +1406,23 @@ footer ul li {
 }
 
 @media screen and (max-width: 459px) {
+	nav {
+		padding: var(--md-pad);
+	}
 	.nav-block img{
 		display: none;
+	}
+	a.nav-block h1{
+		text-align: left;
+	}
+	#menu-icon {
+		padding: 0;
+	}
+	#hamburger-menu {
+		top: 116px;
+	}
+	.featured-service {
+		padding-top: 116px;
 	}
 	.featured-container img {
 		width: 80%;
@@ -1420,9 +1434,23 @@ footer ul li {
 
 @media screen and (max-width: 373px) {
 	#hamburger-menu {
-		top: 134px;
+		top: 154px;
 	}
 	.featured-service {
-		padding-top: 134px;
+		padding-top: 154px;
+	}
+}
+
+/* on touch devices, disable hover effects for taps */
+@media (hover:none) {
+	*:hover {
+		background-color: initial !important;
+		color: initial !important;
+		transform: initial !important;
+		opacity: initial !important;
+		box-shadow: initial !important;
+		border-color: initial !important;
+		border-bottom: initial !important;
+		border: initial !important;
 	}
 }

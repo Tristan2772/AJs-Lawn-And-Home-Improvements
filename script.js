@@ -14,14 +14,14 @@ menuIcon.addEventListener("click", function () {
 });
 
 menuContent.addEventListener("focusin", function () {
-	contentFocusCount ++;
+	contentFocusCount++;
 	menuContent.classList.add("active");
 	menuIcon.classList.remove("bx-menu");
 	menuIcon.classList.add("bxs-x-square");
 });
 
 menuContent.addEventListener("focusout", function () {
-	contentFocusCount --;
+	contentFocusCount--;
 	setTimeout(() => {
 		if (contentFocusCount === 0) {
 			menuContent.classList.remove("active");
@@ -31,98 +31,108 @@ menuContent.addEventListener("focusout", function () {
 	}, 30);
 });
 
-function listInit() {
-    lawnList.open = true;
-    homeList.open = true;
-    lawnList.classList.remove('active');
-    homeList.classList.remove('active');
-}
-listInit();
-
 //add display to ul of nav-dropdown
 homeList.addEventListener("mouseenter", () => {
-    homeList.classList.add('active');
-    setTimeout(() => {
-        homeList.open = true;
-    }, 10);
+	homeList.classList.add("active");
+	setTimeout(() => {
+		homeList.open = true;
+	}, 10);
 });
 lawnList.addEventListener("mouseenter", () => {
-    lawnList.classList.add('active');
-    setTimeout(() => {
-        lawnList.open = true;
-    }, 10);
+	lawnList.classList.add("active");
+	setTimeout(() => {
+		lawnList.open = true;
+	}, 10);
 });
 
 homeList.addEventListener("focusin", () => {
-    homeList.classList.add('active');
-    setTimeout(() => {
-        homeList.open = true;
-    }, 10);
+	homeList.classList.add("active");
+	setTimeout(() => {
+		homeList.open = true;
+	}, 10);
 });
 lawnList.addEventListener("focusin", () => {
-    lawnList.classList.add('active');
-    setTimeout(() => {
-        lawnList.open = true;
-    }, 10);
+	lawnList.classList.add("active");
+	setTimeout(() => {
+		lawnList.open = true;
+	}, 10);
 });
-
 
 homeList.addEventListener("mouseleave", () => {
-    homeList.classList.remove('active');
-    setTimeout(() => {
-        homeList.open = false;
-    }, 10);
+	homeList.classList.remove("active");
+	setTimeout(() => {
+		homeList.open = false;
+	}, 10);
 });
 lawnList.addEventListener("mouseleave", () => {
-    lawnList.classList.remove('active');
-    setTimeout(() => {
-        lawnList.open = false;
-    }, 10);
+	lawnList.classList.remove("active");
+	setTimeout(() => {
+		lawnList.open = false;
+	}, 10);
 });
 
 homeList.addEventListener("focusout", () => {
-    homeList.classList.remove('active');
-    setTimeout(() => {
-        homeList.open = false;
-    }, 10);
+	homeList.classList.remove("active");
+	setTimeout(() => {
+		homeList.open = false;
+	}, 10);
 });
 lawnList.addEventListener("focusout", () => {
-    lawnList.classList.remove('active');
-    setTimeout(() => {
-        lawnList.open = false;
-    }, 10);
+	lawnList.classList.remove("active");
+	setTimeout(() => {
+		lawnList.open = false;
+	}, 10);
 });
 
 // ---------------- FAQ --------------
-
 const faqQuestions = document.querySelectorAll(".question");
+
+function listInit() {
+	lawnList.open = true;
+	homeList.open = true;
+	lawnList.classList.remove("active");
+	homeList.classList.remove("active");
+	faqQuestions.forEach((question) => {
+		question.open = !open;
+		question.classList.remove("active");
+	});
+}
+listInit();
 
 faqQuestions.forEach((question) => {
 	question.addEventListener("click", function (event) {
 		event.preventDefault();
+		// if details is open, close it 
 		if (this.open) {
-			this.classList.toggle("active");
+			this.classList.remove("active");
 			setTimeout(() => {
 				question.open = !open;
-			}, 250);
+			}, 300);
+		// or if details is closed, close others and open this one
 		} else {
 			faqQuestions.forEach((question) => {
 				question.classList.remove("active");
 				if (question.open) {
 					setTimeout(() => {
 						question.open = !open;
-					}, 250);
+					}, 300);
 				}
 			});
-			this.classList.toggle("active");
+			this.classList.add("active");
 			this.open = open;
 		}
 	});
+	question.addEventListener("blur", function () {
+		let sumEl = question.querySelector("summary");
+		sumEl.blur();
+		console.log("blur");
+	});
 });
 
-
 // ------------- set cards as active when on sreen effect
-let allCards = document.querySelectorAll("#odd, .card, .expect-card, .testimonial, #why-container img");
+let allCards = document.querySelectorAll(
+	"#odd, .card, .expect-card, .testimonial, #why-container img"
+);
 let isScrolling;
 
 document.addEventListener("scroll", () => {
