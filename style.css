@@ -112,7 +112,7 @@ nav a {
 
 .nav-btn:hover,
 .nav-btn:focus-visible {
-	transform: scale(1.1);
+	transform: scale(1.05);
 	border: 3px solid var(--secondary);
 	color: var(--secondary);
 	box-shadow: 0 0 12px var(--secondary);
@@ -130,6 +130,10 @@ nav a {
 }
 .nav-dropdown summary {
 	list-style-type: none;
+	
+}
+.nav-dropdown summary p {
+	display: inline;
 	border-bottom: 3px solid transparent;
 	transition: transform 0.3s ease-in-out, border-bottom 0.3s ease-in-out;
 }
@@ -145,7 +149,7 @@ summary::-webkit-details-marker{
 	display: block;
 	position: absolute;
 	overflow: hidden;
-	padding-top: 53px;
+	padding-top: 52px;
 	top: 0;
 	left: 50%;
 	transform: translateX(-50%);
@@ -154,9 +158,10 @@ summary::-webkit-details-marker{
 	max-height: 0;
 	transition: max-height 0.4s ease, opacity 0.4s ease;
 }
-.nav-dropdown.active summary {
-	transform: scale(1.1);
+.nav-dropdown.active summary p{
+	transform: scale(1.05);
 	border-bottom: 3px solid var(--primary);
+	
 }
 .nav-dropdown.active i {
 	transform: rotate(0deg);
