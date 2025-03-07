@@ -1407,7 +1407,7 @@ footer ul li {
 
 @media screen and (max-width: 459px) {
 	nav {
-		padding: var(--md-pad);
+		padding: var(--sm-pad) var(--md-pad);
 	}
 	.nav-block img{
 		display: none;
@@ -1419,10 +1419,10 @@ footer ul li {
 		padding: 0;
 	}
 	#hamburger-menu {
-		top: 116px;
+		top: 96px;
 	}
 	.featured-service {
-		padding-top: 116px;
+		padding-top: 96px;
 	}
 	.featured-container img {
 		width: 80%;
@@ -1434,9 +1434,9 @@ footer ul li {
 
 @media screen and (max-width: 373px) {
 	#hamburger-menu {
-		top: 154px;
+		top: 134px;
 	}
 	.featured-service {
-		padding-top: 154px;
+		padding-top: 134px;
 	}
 }
