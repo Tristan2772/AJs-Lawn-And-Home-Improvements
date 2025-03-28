@@ -4,85 +4,64 @@ const menuIcon = document.querySelector("#menu-icon");
 const menuContent = document.querySelector("#hamburger-menu");
 const homeList = document.querySelector("#home-dropdown");
 const lawnList = document.querySelector("#lawn-dropdown");
-let contentFocusCount = 0;
+let focusTimer;
 
-//on click, menu icon turns into x icon
+//on click, menu icon and x icon are toggled and menu content is toggled
 menuIcon.addEventListener("click", function () {
 	menuContent.classList.toggle("active");
 	menuIcon.classList.toggle("bx-menu");
 	menuIcon.classList.toggle("bxs-x-square");
+	clearTimeout(focusTimer);
 });
 
+//on keyboard focus, show content in menu
 menuContent.addEventListener("focusin", function () {
-	contentFocusCount++;
 	menuContent.classList.add("active");
 	menuIcon.classList.remove("bx-menu");
 	menuIcon.classList.add("bxs-x-square");
+	clearTimeout(focusTimer);
 });
 
 menuContent.addEventListener("focusout", function () {
-	contentFocusCount--;
-	setTimeout(() => {
-		if (contentFocusCount === 0) {
-			menuContent.classList.remove("active");
-			menuIcon.classList.add("bx-menu");
-			menuIcon.classList.remove("bxs-x-square");
-		}
-	}, 30);
+	focusTimer = setTimeout( () => {
+		menuContent.classList.remove("active");
+		menuIcon.classList.add("bx-menu");
+		menuIcon.classList.remove("bxs-x-square");
+	}, 200);
 });
 
-//add display to ul of nav-dropdown
+
+//on mouse hover toggle display of nav-dropdown
 homeList.addEventListener("mouseenter", () => {
 	homeList.classList.add("active");
-	setTimeout(() => {
-		homeList.open = true;
-	}, 10);
 });
 lawnList.addEventListener("mouseenter", () => {
 	lawnList.classList.add("active");
-	setTimeout(() => {
-		lawnList.open = true;
-	}, 10);
-});
-
-homeList.addEventListener("focusin", () => {
-	homeList.classList.add("active");
-	setTimeout(() => {
-		homeList.open = true;
-	}, 10);
-});
-lawnList.addEventListener("focusin", () => {
-	lawnList.classList.add("active");
-	setTimeout(() => {
-		lawnList.open = true;
-	}, 10);
 });
 
 homeList.addEventListener("mouseleave", () => {
 	homeList.classList.remove("active");
-	setTimeout(() => {
-		homeList.open = false;
-	}, 10);
 });
 lawnList.addEventListener("mouseleave", () => {
 	lawnList.classList.remove("active");
-	setTimeout(() => {
-		lawnList.open = false;
-	}, 10);
+});
+
+
+//on keyboard focus, toggle display of nav-dropdown
+homeList.addEventListener("focusin", () => {
+	homeList.classList.add("active");
+});
+lawnList.addEventListener("focusin", () => {
+	lawnList.classList.add("active");
 });
 
 homeList.addEventListener("focusout", () => {
 	homeList.classList.remove("active");
-	setTimeout(() => {
-		homeList.open = false;
-	}, 10);
 });
 lawnList.addEventListener("focusout", () => {
 	lawnList.classList.remove("active");
-	setTimeout(() => {
-		lawnList.open = false;
-	}, 10);
 });
+
 
 // ---------------- FAQ --------------
 const faqQuestions = document.querySelectorAll(".question");

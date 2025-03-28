@@ -128,18 +128,10 @@ nav a {
 	position: relative;
 	width: 33%;
 }
-.nav-dropdown summary {
-	list-style-type: none;
-	
-}
-.nav-dropdown summary p {
+.nav-dropdown div p {
 	display: inline;
 	border-bottom: 3px solid transparent;
 	transition: transform 0.3s ease-in-out, border-bottom 0.3s ease-in-out;
-}
-
-summary::-webkit-details-marker{
-	display: none;
 }
 .nav-dropdown i {
 	transform: rotate(90deg);
@@ -158,7 +150,7 @@ summary::-webkit-details-marker{
 	max-height: 0;
 	transition: max-height 0.4s ease, opacity 0.4s ease;
 }
-.nav-dropdown.active summary p{
+.nav-dropdown.active div p{
 	transform: scale(1.05);
 	border-bottom: 3px solid var(--primary);
 	
