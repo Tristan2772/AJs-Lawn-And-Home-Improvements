@@ -63,48 +63,6 @@ lawnList.addEventListener("focusout", () => {
 });
 
 
-// ---------------- FAQ --------------
-const faqQuestions = document.querySelectorAll(".question");
-
-function listInit() {
-	lawnList.open = true;
-	homeList.open = true;
-	lawnList.classList.remove("active");
-	homeList.classList.remove("active");
-	faqQuestions.forEach((question) => {
-		question.open = !open;
-		question.classList.remove("active");
-	});
-}
-
-//on each page load, run func to smooth out transitions
-window.addEventListener("DOMContentLoaded", listInit());
-
-faqQuestions.forEach((question) => {
-	question.addEventListener("click", function (event) {
-		event.preventDefault();
-		// if details is open, close it 
-		if (this.open) {
-			this.classList.remove("active");
-			setTimeout(() => {
-				question.open = !open;
-			}, 300);
-		// or if details is closed, close others and open this one
-		} else {
-			faqQuestions.forEach((question) => {
-				question.classList.remove("active");
-				if (question.open) {
-					setTimeout(() => {
-						question.open = !open;
-					}, 300);
-				}
-			});
-			this.classList.add("active");
-			this.open = open;
-		}
-	});
-});
-
 // ------------- set cards as active when on sreen effect
 let allCards = document.querySelectorAll(
 	"#odd, .card, .expect-card, .testimonial, #why-container img"
@@ -120,7 +78,7 @@ document.addEventListener("scroll", () => {
 		isScrolling = setTimeout(() => {
 			let windowTop = window.scrollY;
 			let windowBottom = windowTop + window.innerHeight;
-
+			
 			allCards.forEach((card) => {
 				let topOfCard = card.offsetTop;
 				let cardHeight = card.clientHeight;
@@ -142,4 +100,32 @@ document.addEventListener("scroll", () => {
 			});
 		}, 250);
 	}
+});
+
+
+// ---------------- FAQ --------------
+const questions = document.querySelectorAll(".question");
+const questionCards = document.querySelectorAll(".question-card");
+
+questions.forEach(question => {
+	question.addEventListener("click", () => {
+		const isExpanded = question.getAttribute("aria-expanded") === "true";
+		let parEl = question.parentElement;
+		//if open when clicked, close it
+		if (isExpanded) {
+			parEl.classList.remove("active");
+			question.setAttribute("aria-expanded", "false");
+			//if closed when clicked, close others and open the clicked one
+		} else {
+			//close other question cards
+			questionCards.forEach(card => {
+				card.classList.remove("active");
+				let childEl = card.querySelector(".question");
+				childEl.setAttribute("aria-expanded", "false");
+			});
+			//open this question card
+			parEl.classList.add("active");
+			question.setAttribute("aria-expanded", "true");
+		}
+	});
 });
