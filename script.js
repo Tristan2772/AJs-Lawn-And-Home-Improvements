@@ -173,3 +173,14 @@ imageBoxes.forEach(imageBox => {
 	});
 
 });
+
+
+const navBar = document.querySelector("nav");
+
+function setNavHeight() {
+	let navHeight = navBar.offsetHeight;
+	menuContent.style.top = navHeight + "px";
+}
+
+window.onload = setNavHeight;
+window.onresize = setNavHeight;
