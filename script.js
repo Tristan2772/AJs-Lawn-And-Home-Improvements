@@ -2,11 +2,11 @@
 
 const menuIcon = document.querySelector("#menu-icon");
 const menuContent = document.querySelector("#hamburger-menu");
-const homeList = document.querySelector("#home-dropdown");
-const lawnList = document.querySelector("#lawn-dropdown");
+const navDropdowns = document.querySelectorAll(".nav-dropdown");
+const navBtns = document.querySelectorAll(".nav-dropdown button");
 let focusTimer;
 
-//on click, menu icon and x icon are toggled and menu content is toggled
+//on mobile menu click, menu icon and x icon are toggled and menu content is toggled
 menuIcon.addEventListener("click", function () {
 	menuContent.classList.toggle("active");
 	menuIcon.classList.toggle("bx-menu");
@@ -21,7 +21,6 @@ menuContent.addEventListener("focusin", function () {
 	menuIcon.classList.add("bxs-x-square");
 	clearTimeout(focusTimer);
 });
-
 menuContent.addEventListener("focusout", function () {
 	focusTimer = setTimeout( () => {
 		menuContent.classList.remove("active");
@@ -31,35 +30,62 @@ menuContent.addEventListener("focusout", function () {
 });
 
 
-//on mouse hover toggle display of nav-dropdown
-homeList.addEventListener("mouseenter", () => {
-	homeList.classList.add("active");
-});
-lawnList.addEventListener("mouseenter", () => {
-	lawnList.classList.add("active");
-});
+//on nav dropdown click, open list 
+navDropdowns.forEach(dropdown => {
 
-homeList.addEventListener("mouseleave", () => {
-	homeList.classList.remove("active");
-});
-lawnList.addEventListener("mouseleave", () => {
-	lawnList.classList.remove("active");
-});
+	let btn = dropdown.querySelector("button");
+	const btnContent = document.getElementById(btn.getAttribute("aria-controls"));
+	btn.addEventListener("click", () => {
 
+		//if open when clicked, close it. if closed, open
+		const isExpanded = btn.getAttribute("aria-expanded") === "true";
+		
+		navBtns.forEach(navBtn => {
+			// close all accordions
+			navBtn.setAttribute("aria-expanded", "false");
+			const content = document.getElementById(navBtn.getAttribute("aria-controls"));
+			content.setAttribute("hidden", "");
+			const parEl = navBtn.parentElement;
+			parEl.classList.remove("active");
+			//take links out of tab order
+			content.querySelectorAll("a").forEach(link => {
+				link.setAttribute("tabindex", "-1");
+			});
+		});
+		
+		if (!isExpanded) {
+			//open this accordion
+			btn.setAttribute("aria-expanded", "true");
+			const content = document.getElementById(btn.getAttribute("aria-controls"));
+			content.removeAttribute('hidden');
+			const parEl = btn.parentElement;
+			parEl.classList.add("active");
+			//reset links tab order
+			content.querySelectorAll("a").forEach(link => {
+				link.removeAttribute("tabindex");
+			});
+		}                                                 
+	});
 
-//on keyboard focus, toggle display of nav-dropdown
-homeList.addEventListener("focusin", () => {
-	homeList.classList.add("active");
-});
-lawnList.addEventListener("focusin", () => {
-	lawnList.classList.add("active");
-});
+	//close when button or content is not in focus
+	const closeOnBlur = () => {
+		setTimeout(() => {
+			const activeEl = document.activeElement;
+			const parEl = btn.parentElement;
+			if (!btn.contains(activeEl) && !btnContent.contains(activeEl)) {
+				parEl.classList.remove("active");
+				btn.setAttribute("aria-expanded", "false");
+				btnContent.setAttribute("hidden", "");
+				btnContent.querySelectorAll("a").forEach(link => {
+					link.setAttribute("tabindex", "-1");
+				});
+			}
+		}, 200);
+	}
 
-homeList.addEventListener("focusout", () => {
-	homeList.classList.remove("active");
-});
-lawnList.addEventListener("focusout", () => {
-	lawnList.classList.remove("active");
+	btn.addEventListener("blur", closeOnBlur);
+	btnContent.addEventListener("focusout", closeOnBlur);
+	
 });
 
 

@@ -29,26 +29,26 @@
             <i id="menu-icon" class='bx bx-menu'></i>
             <div id="hamburger-menu" class="nav-block">
                 <div class="nav-dropdown" id="lawn-dropdown">
-                    <div tabindex="0">
+                    <button id="btn1"  aria-expanded="false" aria-controls="list1">
                         <p>Lawn Services</p> 
                         <i class='bx bx-chevron-down'></i>
-                    </div>
-                    <ul>
-                        <li><a href="AJsmowservice.html">Mow Package</a></li>
-                        <li><a href="AJsgardenservice.html">Garden Bed Cleanup</a></li>
-                        <li><a href="AJsbushandtreetrimmingservices.html">Bush And Tree Trimming</a></li>
+                    </button>
+                    <ul class="dropdown" id="list1" role="region" aria-labelledby="btn1" hidden>
+                        <li><a tabindex="-1" href="AJsmowservice.html">Mow Package</a></li>
+                        <li><a tabindex="-1" href="AJsgardenservice.html">Garden Bed Cleanup</a></li>
+                        <li><a tabindex="-1" href="AJsbushandtreetrimmingservices.html">Bush And Tree Trimming</a></li>
                     </ul>
                 </div>
                 
                 <div class="nav-dropdown" id="home-dropdown">
-                    <div tabindex="0">
+                    <button id="btn2"  aria-expanded="false" aria-controls="list2">
                         <p>Home Services</p>
                         <i class='bx bx-chevron-down'></i>
-                    </div>
-                    <ul class="dropdown">
-                        <li><a href="AJsguttercleaningservices.html">Gutter Cleaning</a></li>
-                        <li><a href="AJsfencerepairservices.html">Wood Fence Repair</a></li>
-                        <li><a href="#">Interior & Exterior Painting</a></li>
+                    </button>
+                    <ul class="dropdown" id="list2" role="region" aria-labelledby="btn2" hidden>
+                        <li><a tabindex="-1" href="AJsguttercleaningservices.html">Gutter Cleaning</a></li>
+                        <li><a tabindex="-1" href="AJsfencerepairservices.html">Wood Fence Repair</a></li>
+                        <li><a tabindex="-1" href="#">Interior & Exterior Painting</a></li>
                     </ul>
                 </div>
                 
