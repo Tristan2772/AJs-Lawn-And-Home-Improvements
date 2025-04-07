@@ -13,6 +13,7 @@ html {
 }
 
 :root {
+	--text-color: #fff;
 	--primary: #a505a5;
 	--secondary: #fda604;
 	--main-bg: #080808;
@@ -50,7 +51,7 @@ nav {
 	justify-content: space-between;
 	align-items: end;
 	padding: var(--sm-pad);
-	color: white;
+	color: var(--text-color);
 	background-color: rgba(0, 0, 0, 0.9);
 }
 #menu-icon {
@@ -90,7 +91,7 @@ a.nav-block:focus-visible h1 {
 
 nav a {
 	text-decoration: none;
-	color: white;
+	color: var(--text-color);
 }
 
 .nav-block img {
@@ -107,11 +108,11 @@ nav a {
 	min-width: 213px;
 	background-color: var(--primary);
 	border-radius: 25px;
-	border: 3px solid white;
+	border: 3px solid var(--text-color);
 	font-size: var(--regular-font-size);
 	text-decoration: none;
 	transition: 0.3s ease-out;
-	color: white;
+	color: var(--text-color);
 	cursor: pointer;
 	position: relative;
 	width: 33%;
@@ -133,7 +134,7 @@ nav a {
 }
 .nav-dropdown button {
 	font-size: var(--regular-font-size);
-	color: white;
+	color: var(--text-color);
 	background-color: inherit;
 	border: none;
 	width: 100%;
@@ -178,7 +179,7 @@ nav a {
 	list-style-type: none;
 	text-wrap: nowrap;
 	padding: var(--sm-pad) 15px;
-	border-bottom: 2px solid white;
+	border-bottom: 2px solid var(--text-color);
 	background-color: rgba(0, 0, 0, 0.9);
 }
 .nav-dropdown ul li:nth-child(1) {
@@ -191,7 +192,7 @@ nav a {
 .nav-dropdown ul li a {
 	pointer-events: auto;
 	text-decoration: none;
-	color: white;
+	color: var(--text-color);
 	border-bottom: 3px solid transparent;
 	transition: border-bottom 0.3s ease;
 }
@@ -231,7 +232,7 @@ section {
 	text-align: center;
 	position: absolute;
 	width: 100%;
-	color: white;
+	color: var(--text-color);
 	top: 55%;
 	left: 50%;
 	transform: translate(-50%, -50%);
@@ -259,12 +260,12 @@ section {
 a.call-btn {
 	width: 25%;
 	min-width: 265px;
-	color: white;
+	color: var(--text-color);
 	font-size: var(--regular-font-size);
 	text-decoration: none;
 	padding: var(--sm-pad);
 	background-color: var(--primary);
-	border: 3px solid white;
+	border: 3px solid var(--text-color);
 	border-radius: 25px;
 	text-align: center;
 	display: block;
@@ -301,13 +302,13 @@ a.call-btn:hover, a.call-btn:focus-visible {
 	text-align: center;
 	padding: 12px var(--sm-pad);
 	border: solid 3px var(--main-bg);
-	color: white;
+	color: var(--text-color);
 	text-wrap: nowrap;
 }
 
 /* ---------- services ----------- */
 .service-container {
-	background-color: var(--main-bg);
+	background-color: var(--second-bg);
 	width: 100%;
 	padding: var(--reg-pad) 0 0;
 }
@@ -315,7 +316,7 @@ a.call-btn:hover, a.call-btn:focus-visible {
 	padding: 0 0 var(--reg-pad);
 }
 .service-container h2 {
-	color: white;
+	color: var(--text-color);
 	font-size: var(--large-header-font-size);
 	text-align: center;
 	display: block;
@@ -334,8 +335,8 @@ a.call-btn:hover, a.call-btn:focus-visible {
 	width: 31%;
 	display: flex;
 	flex-direction: column;
-	background-color: var(--main-bg);
-	border: solid 3px white;
+	background-color: var(--second-bg);
+	border: solid 3px var(--text-color);
 	border-radius: 25px;
 	transition: 0.3s ease-in-out;
 	padding: var(--md-pad) 0;
@@ -344,7 +345,7 @@ a.call-btn:hover, a.call-btn:focus-visible {
 .services-list .card.active,
 .services-list .card:focus-visible {
 	transform: scale(1.05);
-	background-color: var(--second-bg);
+	background-color: var(--main-bg);
 	border: 3px solid var(--primary);
 }
 .mow-b {
@@ -501,6 +502,7 @@ a.call-btn:hover, a.call-btn:focus-visible {
 	transition: 0.4s ease-in-out;
 	flex-grow: 0;
 	position: relative;
+	cursor: pointer;
 }
 .service-img div {
 	transition: opacity 0.4s ease-out;
@@ -527,7 +529,7 @@ a.call-btn:hover, a.call-btn:focus-visible {
 	border-radius: 10px;
 	background-color: rgba(0, 0, 0, 0.9);
 	backdrop-filter: blur(10px);
-	color: white;
+	color: var(--text-color);
 	text-align: center;
 	transition: 0.3s ease;
 	opacity: 1;
@@ -547,7 +549,7 @@ a.call-btn:hover, a.call-btn:focus-visible {
 }
 .services-list .card h3 {
 	font-size: 28px;
-	color: white;
+	color: var(--text-color);
 	text-align: center;
 	width: 90%;
 	padding: var(--md-pad) 0 0;
@@ -558,7 +560,7 @@ a.call-btn:hover, a.call-btn:focus-visible {
 	text-align: center;
 	width: 90%;
 	margin: var(--center);
-	color: white;
+	color: var(--text-color);
 	line-height: var(--line-height);
 	padding: var(--md-pad) 0 0;
 }
@@ -586,8 +588,8 @@ a.nav-block h1:active,
 }
 div#odd {
 	padding: var(--reg-pad) 0;
-	background-color: var(--main-bg);
-	border: solid 3px white;
+	background-color: var(--second-bg);
+	border: solid 3px var(--text-color);
 	border-radius: 25px;
 	width: 90%;
 	margin: var(--center);
@@ -597,7 +599,7 @@ div#odd:hover,
 div#odd.active,
 div#odd:focus-visible {
 	transform: scale(1.05);
-	background-color: var(--second-bg);
+	background-color: var(--main-bg);
 	border: 3px solid var(--primary);
 }
 div#odd h2 {
@@ -615,13 +617,13 @@ div#odd p {
 .featured-service {
 	width: 100%;
 	padding: 100px 0 var(--reg-pad);
-	background-color: var(--main-bg);
+	background-color: var(--second-bg);
 }
 .featured-service h2 {
 	padding: var(--reg-pad) 0;
 	margin: var(--center);
 	width: 90%;
-	color: white;
+	color: var(--text-color);
 	text-align: center;
 	font-size: var(--large-header-font-size);
 }
@@ -642,7 +644,7 @@ div#odd p {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
-	color: white;
+	color: var(--text-color);
 }
 .featured-container ul li {
 	font-size: var(--regular-font-size);
@@ -673,8 +675,8 @@ div#odd p {
 
 .expect-container {
 	width: 100%;
-	background-color: var(--second-bg);
-	color: white;
+	background-color: var(--main-bg);
+	color: var(--text-color);
 }
 
 .expect-container h2 {
@@ -697,7 +699,7 @@ div#odd p {
 	flex-direction: column;
 	text-align: center;
 	width: 31%;
-	border: solid 3px white;
+	border: solid 3px var(--text-color);
 	border-radius: 25px;
 	margin: --center;
 	padding: var(--reg-pad) var(--md-pad);
@@ -708,13 +710,13 @@ div#odd p {
 .expect-card.active,
 .expect-card:focus-visible {
 	transform: scale(1.05);
-	background-color: var(--main-bg);
+	background-color: var(--second-bg);
 	border: 3px solid var(--primary);
 }
 
 .expect-card i {
 	background-color: var(--primary);
-	color: white;
+	color: var(--text-color);
 	font-size: 70px;
 	padding: 60px;
 	border-radius: 50%;
@@ -735,8 +737,8 @@ div#odd p {
 /* ---------- why us ---------- */
 
 #why {
-	background-color: var(--main-bg);
-	color: white;
+	background-color: var(--second-bg);
+	color: var(--text-color);
 	padding: var(--reg-pad) 0;
 }
 
@@ -760,7 +762,7 @@ div#odd p {
 	width: 500px;
 	height: 400px;
 	border-radius: 25px;
-	border: 3px solid white;
+	border: 3px solid var(--text-color);
 	transition: border-color 0.3s ease-out, transform 0.3s ease-out;
 }
 #why-container img:hover,
@@ -781,12 +783,12 @@ div#odd p {
 
 /*------------ testimonials ------------*/
 #testimonials {
-	background-color: var(--second-bg);
+	background-color: var(--main-bg);
 	padding-bottom: var(--reg-pad);
 }
 
 #testimonials h2 {
-	color: white;
+	color: var(--text-color);
 	font-size: var(--large-header-font-size);
 	text-align: center;
 	margin: var(--center);
@@ -804,9 +806,9 @@ div#odd p {
 
 .testimonial {
 	width: 31%;
-	color: white;
-	background-color: var(--second-bg);
-	border: solid 3px white;
+	color: var(--text-color);
+	background-color: var(--main-bg);
+	border: solid 3px var(--text-color);
 	border-radius: 25px;
 	margin: var(--center);
 	transition: 0.3s ease-in-out;
@@ -818,7 +820,7 @@ div#odd p {
 .testimonial:focus-visible {
 	border: 3px solid var(--primary);
 	transform: scale(1.05);
-	background-color: var(--main-bg);
+	background-color: var(--second-bg);
 }
 
 .testimonial p.name {
@@ -846,7 +848,7 @@ section#contact {
 	min-height: 50svh;
 	width: 100%;
 	background-color: var(--primary);
-	color: white;
+	color: var(--text-color);
 	padding: 0 0 100px;
 }
 
@@ -868,10 +870,10 @@ section#contact {
 	padding-bottom: var(--reg-pad);
 }
 #contact a {
-	color: white;
+	color: var(--text-color);
 	transition: 0.3s ease-in-out;
 	text-decoration: none;
-	border-bottom: 3px solid white;
+	border-bottom: 3px solid var(--text-color);
 }
 #contact a:hover,
 #contact a:focus-visible {
@@ -883,12 +885,12 @@ section#contact {
 }
 #contact .social {
 	text-align: center;
-	color: white;
+	color: var(--text-color);
 }
 #contact .social a {
 	font-size: var(--regular-font-size);
-	color: white;
-	border: 3px solid white;
+	color: var(--text-color);
+	border: 3px solid var(--text-color);
 	width: 42px;
 	height: 42px;
 	line-height: var(--line-height);
@@ -909,11 +911,11 @@ section#contact {
 /*--------- About -----------*/
 section#about {
 	width: 100%;
-	color: white;
+	color: var(--text-color);
 	padding: 100px var(--reg-pad) var(--reg-pad);
 	text-align: center;
 	position: relative;
-	background-color: var(--second-bg);
+	background-color: var(--main-bg);
 	min-height: 50svh;
 }
 #about img {
@@ -940,7 +942,7 @@ section#about {
 
 /*----------footer------------*/
 footer {
-	color: white;
+	color: var(--text-color);
 }
 
 .footer-h2 {
@@ -950,7 +952,8 @@ footer {
 
 section#faq {
 	min-height: 50svh;
-	background-color: var(--main-bg);
+	background-color: var(--second-bg);
+	padding-bottom: var(--reg-pad);
 }
 #faq h2 {
 	padding: var(--reg-pad) 0;
@@ -962,7 +965,7 @@ section#faq {
 #faq .question-card {
 	width: 85%;
 	margin: var(--center) var(--reg-pad);
-	border: 3px solid white;
+	border: 3px solid var(--text-color);
 	border-radius: 25px;
 	line-height: var(--line-height);
 	transition: padding 0.3s ease, border-color 0.3s ease;
@@ -970,6 +973,12 @@ section#faq {
 #faq .question-card.active {
 	border-color: var(--primary);
 	padding: 0 0 var(--md-pad);
+	border-radius: 25px;
+	background-color: var(--main-bg);
+}
+
+#faq .question-card:last-child {
+	margin-bottom: 0;
 }
 
 #faq .question-card:hover, 
@@ -987,6 +996,8 @@ section#faq {
 	transition: color 0.3s ease;
 	background-color: inherit;
 	border: none;
+	border-top-right-radius: 25px;
+	border-top-left-radius: 25px;
 }
 #faq .question-card .question p {
 	display: inline;
@@ -1039,7 +1050,7 @@ section#faq {
 	text-align: center;
 	margin: auto;
 	padding: var(--reg-pad);
-	background-color: var(--second-bg);
+	background-color: var(--main-bg);
 }
 
 .footer-container .shared {
@@ -1066,7 +1077,7 @@ footer ul li {
 #footer-btm {
 	width: 100%;
 	text-align: center;
-	background-color: var(--primary-bg);
+	background-color: var(--second-bg);
 	padding: var(--reg-pad) var(--sm-pad);
 	line-height: var(--line-height);
 	font-size: var(--smallest-font-size);
