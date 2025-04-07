@@ -1458,3 +1458,10 @@ footer ul li {
 		padding-top: 134px;
 	}
 }
+
+@media (prefers-reduced-motion: reduce) {
+	*{
+		animation: none;
+		transition: none;
+	}
+}
