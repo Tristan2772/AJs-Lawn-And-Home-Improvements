@@ -155,3 +155,15 @@ questions.forEach(question => {
 		}
 	});
 });
+
+//on tap, change service img. on blur, change it back
+// const imageBoxes = document.querySelectorAll(".service-img");
+// imageBoxes.forEach(imageBox => {
+// 	imageBox.addEventListener("pointerdown", () => {
+// 		imageBox.classList.toggle("active");
+// 	});
+// 	imageBox.addEventListener("blur", () => {
+// 		imageBox.classList.remove("active");
+// 	});
+
+// });
