@@ -111,15 +111,15 @@ document.addEventListener("scroll", () => {
 				let middleOfCard = cardHeight / 2;
 				middleOfCard += topOfCard;
 
-				if (middleOfCard + 50 < windowBottom) {
+				if (middleOfCard + 20 < windowBottom) {
 					// if card is over halfway on the screen, give it active class
 					card.classList.add("active");
 				}
-				if (middleOfCard + 50 < windowTop) {
+				if (middleOfCard + 20 < windowTop) {
 					// if card if over halfway off the top of screen, remove active class
 					card.classList.remove("active");
 				}
-				if (middleOfCard - 50 > windowBottom) {
+				if (middleOfCard - 20 > windowBottom) {
 					// if card if over halfway off the bottom of screen, remove active class
 					card.classList.remove("active");
 				}
@@ -166,6 +166,9 @@ imageBoxes.forEach(imageBox => {
 		imageBox.classList.toggle("active");
 	});
 	imageBox.addEventListener("mouseout", () => {
+		imageBox.classList.remove("active");
+	});
+	imageBox.addEventListener("blur", () => {
 		imageBox.classList.remove("active");
 	});
 

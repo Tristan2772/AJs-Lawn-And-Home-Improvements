@@ -1268,7 +1268,7 @@ footer ul li {
 	}
 	.service-img.active::after,
 	.service-img:focus-visible::after {
-		content: "(tap here)";
+		content: "";
 		opacity: 0;
 	}
 	.service-container p {
