@@ -506,10 +506,12 @@ a.call-btn:hover, a.call-btn:focus-visible {
 	transition: opacity 0.4s ease-out;
 	border-radius: 20px;
 }
-.service-img:focus div:nth-child(1){
+.service-img:focus-visible div:nth-child(1), 
+.service-img.active div:nth-child(1){
 	opacity: 0;
 }
-.service-img:focus div:nth-child(2){
+.service-img:focus-visible div:nth-child(2), 
+.service-img.active div:nth-child(2){
 	opacity: 1;
 }
 .service-img::after {
@@ -530,9 +532,9 @@ a.call-btn:hover, a.call-btn:focus-visible {
 	transition: 0.3s ease;
 	opacity: 1;
 }
-.service-img:hover::after,
+.service-img.active::after,
 .service-img:focus-visible::after {
-	content: "(hover over me)";
+	content: "";
 	opacity: 0;
 }
 .services-list .card .card-content {
@@ -1264,7 +1266,7 @@ footer ul li {
 		content: "(tap here)";
 		opacity: 1;
 	}
-	.service-img:focus::after,
+	.service-img.active::after,
 	.service-img:focus-visible::after {
 		content: "(tap here)";
 		opacity: 0;
