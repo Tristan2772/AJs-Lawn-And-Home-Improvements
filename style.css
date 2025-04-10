@@ -206,7 +206,7 @@ nav a {
 /*---------- hero-------------*/
 
 section {
-	min-height: 100svh;
+	min-height: 642px;
 }
 
 #hero .hero-container {
@@ -845,7 +845,7 @@ div#odd p {
 
 /* ---------contact----------*/
 section#contact {
-	min-height: 50svh;
+	min-height: 320px;
 	width: 100%;
 	background-color: var(--primary);
 	color: var(--text-color);
@@ -916,7 +916,7 @@ section#about {
 	text-align: center;
 	position: relative;
 	background-color: var(--main-bg);
-	min-height: 50svh;
+	min-height: 320px;
 }
 #about img {
 	width: 150px;
@@ -951,7 +951,7 @@ footer {
 }
 
 section#faq {
-	min-height: 50svh;
+	min-height: 320px;
 	background-color: var(--second-bg);
 	padding-bottom: var(--reg-pad);
 }
