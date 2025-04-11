@@ -13,11 +13,14 @@ html {
 }
 
 :root {
-	--text-color: #fff;
+	--text-color: #f3e8f1;
 	--primary: #a505a5;
 	--secondary: #fda604;
 	--main-bg: #080808;
 	--second-bg: #131313;
+	--btn-color: #f3e8f1;
+	--btn-bg: #a505a5;
+	--transparentish: rgba(0, 0, 0, 0.9);
 	--smallest-font-size: 20px;
 	--regular-font-size: 24px;
 	--small-header-font-size: 32px;
@@ -52,7 +55,7 @@ nav {
 	align-items: end;
 	padding: var(--sm-pad);
 	color: var(--text-color);
-	background-color: rgba(0, 0, 0, 0.9);
+	background-color: var(--transparentish);
 }
 #menu-icon {
 	display: none;
@@ -106,13 +109,13 @@ nav a {
 .nav-btn {
 	padding: var(--sm-pad);
 	min-width: 213px;
-	background-color: var(--primary);
+	background-color: var(--btn-bg);
 	border-radius: 25px;
-	border: 3px solid var(--text-color);
+	border: 3px solid var(--btn-color);
 	font-size: var(--regular-font-size);
 	text-decoration: none;
 	transition: 0.3s ease-out;
-	color: var(--text-color);
+	color: var(--btn-color);
 	cursor: pointer;
 	position: relative;
 	width: 33%;
@@ -124,8 +127,6 @@ nav a {
 	color: var(--secondary);
 	box-shadow: 0 0 12px var(--secondary);
 }
-
-/* ///////////////////////////////////////////// */
 .nav-dropdown {
 	width: 33%;
 	position: relative;
@@ -180,7 +181,7 @@ nav a {
 	text-wrap: nowrap;
 	padding: var(--sm-pad) 15px;
 	border-bottom: 2px solid var(--text-color);
-	background-color: rgba(0, 0, 0, 0.9);
+	background-color: var(--transparentish);
 }
 .nav-dropdown ul li:nth-child(1) {
 	padding-top: 0;
@@ -199,9 +200,6 @@ nav a {
 .nav-dropdown ul li a:hover, .nav-dropdown ul li a:focus-visible {
 	border-bottom: 3px solid var(--primary);
 }
-
-
-
 
 /*---------- hero-------------*/
 
@@ -260,12 +258,12 @@ section {
 a.call-btn {
 	width: 25%;
 	min-width: 265px;
-	color: var(--text-color);
+	color: var(--btn-color);
 	font-size: var(--regular-font-size);
 	text-decoration: none;
 	padding: var(--sm-pad);
-	background-color: var(--primary);
-	border: 3px solid var(--text-color);
+	background-color: var(--btn-bg);
+	border: 3px solid var(--btn-color);
 	border-radius: 25px;
 	text-align: center;
 	display: block;
@@ -527,7 +525,7 @@ a.call-btn:hover, a.call-btn:focus-visible {
 	font-size: var(--regular-font-size);
 	padding: 0 5px 5px;
 	border-radius: 10px;
-	background-color: rgba(0, 0, 0, 0.9);
+	background-color: var(--transparentish);
 	backdrop-filter: blur(10px);
 	color: var(--text-color);
 	text-align: center;
@@ -1191,7 +1189,7 @@ footer ul li {
 		position: absolute;
 		right: -320px;
 		top: 95px;
-		background-color: rgba(0, 0, 0, 0.9);
+		background-color: var(--transparentish);
 		margin-right: 0;
 		border-radius: 0 0 0 20px;
 		border-left: 3px solid var(--primary);
@@ -1474,5 +1472,54 @@ footer ul li {
 	*{
 		animation: none;
 		transition: none;
+	}
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+	--text-color: #080808;
+	--main-bg: #f8a6e4;
+	--second-bg: #f3e8f1;
+	--btn-color: #080808;
+	--btn-bg: #fda604;
+	--transparentish: rgba(250, 161, 228, 0.9);
+	}
+	.nav-btn:hover,
+	.nav-btn:focus-visible {
+		border: 3px solid var(--primary);
+		color: var(--primary);
+		box-shadow: 0 0 12px var(--primary);
+	}
+	#hero .hero-img {
+		background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+			url(img/Background1.jpg);
+	}
+	#hero .hero-overlay {
+		color: #f3e8f1;
+	}
+	a.call-btn:hover, a.call-btn:focus-visible {
+		border: 3px solid var(--primary);
+		color: var(--primary);
+		box-shadow: 0 0 12px var(--primary);
+	}
+	.services-list a {
+		color: var(--secondary);
+	}
+	.expect-card i {
+		background-color: var(--secondary);
+	}
+	section#contact {
+		background-color: var(--secondary);
+	}
+	#contact a:hover,
+	#contact a:focus-visible {
+		border-bottom: 3px solid var(--primary);
+		color: var(--primary);
+	}
+	#contact .social a:hover,
+	#contact .social a:focus-visible {
+		color: var(--primary);
+		box-shadow: 0 0 25px var(--primary);
+		border-color: var(--primary);
 	}
 }
