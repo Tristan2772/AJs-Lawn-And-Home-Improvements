@@ -89,7 +89,7 @@ navDropdowns.forEach(dropdown => {
 });
 
 
-// ------------- set cards as active when on sreen effect
+// ------------- set cards as active when on sreen
 let allCards = document.querySelectorAll(
 	"#odd, .card, .expect-card, .testimonial, #why-container img"
 );
@@ -124,7 +124,7 @@ document.addEventListener("scroll", () => {
 					card.classList.remove("active");
 				}
 			});
-		}, 250);
+		}, 300);
 	}
 });
 

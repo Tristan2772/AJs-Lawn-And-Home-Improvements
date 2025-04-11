@@ -292,8 +292,6 @@ a.call-btn:hover, a.call-btn:focus-visible {
 		90deg,
 		var(--main-bg),
 		var(--primary),
-		var(--primary),
-		var(--primary),
 		var(--main-bg)
 	);
 	width: 100%;
@@ -653,8 +651,10 @@ div#odd p {
 	line-height: var(--line-height);
 }
 .featured-container ul li::before {
-	content: "✔";
-	display: inline-block;
+	content: "\2714\FE0E";
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
 	min-width: 30px;
 	height: 30px;
 	border-radius: 15px;
@@ -714,6 +714,9 @@ div#odd p {
 
 .expect-card i {
 	background-color: var(--primary);
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	color: var(--text-color);
 	font-size: 70px;
 	padding: 60px;
@@ -863,6 +866,7 @@ section#contact {
 	text-align: center;
 	width: 75%;
 	line-height: var(--line-height);
+	word-break: keep-all;
 }
 #contact p:nth-child(2) {
 	padding-bottom: var(--reg-pad);
@@ -892,7 +896,9 @@ section#contact {
 	width: 42px;
 	height: 42px;
 	line-height: var(--line-height);
-	display: inline-block;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
 	text-align: center;
 	border-radius: 50%;
 	margin: 0 10px;
@@ -1376,10 +1382,6 @@ footer ul li {
 	#contact P {
 		font-size: var(--regular-font-size);
 	}
-	#contact p a {
-		text-wrap: wrap;
-		word-break: break-all;
-	}
 	#about h2 {
 		font-size: var(--large-header-font-size);
 	}
@@ -1478,29 +1480,47 @@ footer ul li {
 @media (prefers-color-scheme: light) {
 	:root {
 	--text-color: #080808;
-	--main-bg: #f8a6e4;
-	--second-bg: #f3e8f1;
+	--main-bg: #f3e8f1;
+	--second-bg: #f8a6e4;
 	--btn-color: #080808;
 	--btn-bg: #fda604;
-	--transparentish: rgba(250, 161, 228, 0.9);
+	--transparentish: rgba(255, 255, 255, 0.9);
+	--transparentish2: rgba(250, 161, 228, 0.9);
 	}
 	.nav-btn:hover,
 	.nav-btn:focus-visible {
-		border: 3px solid var(--primary);
-		color: var(--primary);
-		box-shadow: 0 0 12px var(--primary);
+		border: 3px solid white;
+		color: white;
+		box-shadow: 0 0 25px var(--primary);
 	}
 	#hero .hero-img {
 		background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
 			url(img/Background1.jpg);
 	}
 	#hero .hero-overlay {
-		color: #f3e8f1;
+		color: white;
+	}
+	#hero a.call-btn {
+		border: 3px solid var(--btn-color);
+		color: var(--btn-color);
+	}
+	#hero a.call-btn:hover, #hero a.call-btn:focus-visible {
+		border: 3px solid white;
+		color: white;
+		box-shadow: 0 0 25px var(--primary);
 	}
 	a.call-btn:hover, a.call-btn:focus-visible {
-		border: 3px solid var(--primary);
-		color: var(--primary);
-		box-shadow: 0 0 12px var(--primary);
+		border: 3px solid white;
+		color: white;
+		box-shadow: 0 0 25px var(--primary);
+	}
+	.service-img::after {
+		background-color: var(--transparentish2);
+	}
+	.services-list .card:hover .service-img::after,
+	.services-list .card.active .service-img::after,
+	.services-list .card:focus-visible .service-img::after {
+		background-color: var(--transparentish);
 	}
 	.services-list a {
 		color: var(--secondary);
@@ -1509,17 +1529,28 @@ footer ul li {
 		background-color: var(--secondary);
 	}
 	section#contact {
+		color: white;
 		background-color: var(--secondary);
+	}
+	#contact a{
+		color: white;
+		border-color: white;
 	}
 	#contact a:hover,
 	#contact a:focus-visible {
-		border-bottom: 3px solid var(--primary);
-		color: var(--primary);
+		border-bottom: 3px solid white;
+		color: white;
+		text-shadow: 0 0 25px white;
+	}
+	#contact .social a{
+		border-color: white;
+		color: white;
 	}
 	#contact .social a:hover,
 	#contact .social a:focus-visible {
-		color: var(--primary);
-		box-shadow: 0 0 25px var(--primary);
-		border-color: var(--primary);
+		border: 3px solid white;
+		color: white;
+		box-shadow: 0 0 25px white;
+		text-shadow: none;
 	}
 }
