@@ -13,12 +13,12 @@ html {
 }
 
 :root {
-	--text-color: #f3e8f1;
+	--text-color: #fff;
 	--primary: #a505a5;
 	--secondary: #fda604;
 	--main-bg: #080808;
-	--second-bg: #131313;
-	--btn-color: #f3e8f1;
+	--second-bg: #1d1d1d;
+	--btn-color: #fff;
 	--btn-bg: #a505a5;
 	--transparentish: rgba(0, 0, 0, 0.9);
 	--smallest-font-size: 20px;
