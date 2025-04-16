@@ -127,13 +127,15 @@ function setActiveCard() {
 				}
 				if (middleOfCard + 20 < windowTop) {
 					// if card if over halfway off the top of screen, remove active class
-					card.classList.remove("active");
+					card.querySelector("img").blur();
 					card.blur();
+					card.classList.remove("active");
 				}
 				if (middleOfCard - 20 > windowBottom) {
 					// if card if over halfway off the bottom of screen, remove active class
-					card.classList.remove("active");
+					card.querySelector("img").blur();
 					card.blur();
+					card.classList.remove("active");
 				}
 			});
 		}, 300);
