@@ -4,6 +4,7 @@ const menuIcon = document.querySelector("#menu-icon");
 const menuContent = document.querySelector("#hamburger-menu");
 const navDropdowns = document.querySelectorAll(".nav-dropdown");
 const navBtns = document.querySelectorAll(".nav-dropdown button");
+const navBar = document.querySelector("nav");
 let focusTimer;
 
 //on mobile menu click, menu icon and x icon are toggled and menu content is toggled
@@ -88,6 +89,15 @@ navDropdowns.forEach(dropdown => {
 	
 });
 
+//dynamically place navbar to avoid alignment issues
+function setNavHeight() {
+	let navHeight = navBar.offsetHeight;
+	menuContent.style.top = navHeight + "px";
+}
+
+window.addEventListener("load", setNavHeight);
+window.addEventListener("resize", setNavHeight);
+
 
 // ------------- set cards as active when on sreen
 let allCards = document.querySelectorAll(
@@ -95,7 +105,7 @@ let allCards = document.querySelectorAll(
 );
 let isScrolling;
 
-document.addEventListener("scroll", () => {
+function setActiveCard() {
 	let windowWidth = document.documentElement.clientWidth;
 	windowWidth += 15;
 	if (windowWidth <= 880) {
@@ -125,8 +135,15 @@ document.addEventListener("scroll", () => {
 				}
 			});
 		}, 300);
+	} else {
+		allCards.forEach((card) => {
+			card.classList.remove("active");
+		});
 	}
-});
+}
+
+document.addEventListener("scroll", setActiveCard);
+window.addEventListener("resize", setActiveCard);
 
 
 // ---------------- FAQ --------------
@@ -171,16 +188,4 @@ imageBoxes.forEach(imageBox => {
 	imageBox.addEventListener("blur", () => {
 		imageBox.classList.remove("active");
 	});
-
 });
-
-
-const navBar = document.querySelector("nav");
-
-function setNavHeight() {
-	let navHeight = navBar.offsetHeight;
-	menuContent.style.top = navHeight + "px";
-}
-
-window.onload = setNavHeight;
-window.onresize = setNavHeight;
