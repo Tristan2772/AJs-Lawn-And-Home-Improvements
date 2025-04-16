@@ -101,7 +101,7 @@ window.addEventListener("resize", setNavHeight);
 
 // ------------- set cards as active when on sreen
 let allCards = document.querySelectorAll(
-	"#odd, .card, .expect-card, .testimonial, #why-container img"
+	"#odd, .card, .featured-container img, .expect-card, .testimonial, #why-container img"
 );
 let isScrolling;
 

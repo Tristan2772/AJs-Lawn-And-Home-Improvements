@@ -637,7 +637,8 @@ div#odd p {
 	border-radius: 25px;
 	transition: 0.3s ease-out;
 }
-.featured-container img:hover{
+.featured-container img:hover,
+.featured-container img.active{
 	transform: scale(1.1);
 	border: 3px solid var(--primary);
 }
