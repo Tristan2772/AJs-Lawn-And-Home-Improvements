@@ -210,7 +210,7 @@ section {
 #hero .hero-container {
 	position: relative;
 	width: 100%;
-	min-height: 100svh;
+	min-height: 642px;
 }
 
 #hero .hero-img {
@@ -220,7 +220,7 @@ section {
 	background-repeat: no-repeat;
 	background-size: cover;
 	position: relative;
-	min-height: 100svh;
+	min-height: 642px;
 }
 
 #hero .hero-overlay {

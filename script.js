@@ -128,10 +128,12 @@ function setActiveCard() {
 				if (middleOfCard + 20 < windowTop) {
 					// if card if over halfway off the top of screen, remove active class
 					card.classList.remove("active");
+					card.blur();
 				}
 				if (middleOfCard - 20 > windowBottom) {
 					// if card if over halfway off the bottom of screen, remove active class
 					card.classList.remove("active");
+					card.blur();
 				}
 			});
 		}, 300);
