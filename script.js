@@ -124,7 +124,7 @@ function setActiveCard() {
 				if (middleOfCard + 20 < windowBottom) {
 					// if card is over halfway on the screen from the bottom, give it active class
 					card.classList.add("active");
-					console.log(card);
+					card.focus();
 				}
 				if (middleOfCard + 20 < windowTop) {
 					// if card if over halfway off the top of screen, remove active class
