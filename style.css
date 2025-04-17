@@ -1233,7 +1233,9 @@ footer ul li {
 	.nav-dropdown.active i {
 		transform: rotate(0deg);
 	}
-
+	#hero .hero-img {
+		min-height: 711px;
+	}
 	.hero-overlay h2 {
 		font-size: var(--small-header-font-size);
 		width: 90%;
