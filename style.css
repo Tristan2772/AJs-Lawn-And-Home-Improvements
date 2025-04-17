@@ -223,8 +223,8 @@ section {
 	background-repeat: no-repeat;
 	background-size: cover;
 	position: relative;
-	min-height: 100svh;
-	max-height: 100svh;
+	min-height: 100vh;
+	max-height: 100vh;
 	/* min-height: 642px; */
 }
 
