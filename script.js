@@ -98,8 +98,16 @@ function setNavHeight() {
 window.addEventListener("load", setNavHeight);
 window.addEventListener("resize", setNavHeight);
 
+// --------- get viewport height and set as root variable for hero img height ----------
+function setVH() {
+	let viewportHeight = window.innerHeight;
+	document.documentElement.style.setProperty("--viewport-height", `${viewportHeight}px`);
+}
 
-// ------------- set cards as active when on sreen or hovered with mouse
+window.addEventListener("load", setVH);
+window.addEventListener("resize", setVH);
+
+// ----------- set cards as active when on screen or hovered with mouse -------------
 let isScrolling;
 let allCards = document.querySelectorAll(
 	"#odd, .card, .featured-container img, .expect-card, .testimonial, #why-container img"
