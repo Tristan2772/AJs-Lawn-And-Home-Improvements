@@ -218,6 +218,3 @@ questions.forEach(question => {
 		}
 	});
 });
-document.addEventListener("pointerdown",  () => {
-	console.log(document.activeElement);
-});
