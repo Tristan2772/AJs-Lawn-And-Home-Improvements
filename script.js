@@ -122,18 +122,23 @@ function setActiveCard() {
 				middleOfCard += topOfCard;
 
 				if (middleOfCard + 20 < windowBottom) {
-					// if card is over halfway on the screen, give it active class
+					// if card is over halfway on the screen from the bottom, give it active class
 					card.classList.add("active");
+					console.log(card);
 				}
 				if (middleOfCard + 20 < windowTop) {
 					// if card if over halfway off the top of screen, remove active class
-					card.querySelector("img").blur();
+					if(card.querySelector("img")) {
+						card.querySelector("img").blur();
+					}
 					card.blur();
 					card.classList.remove("active");
 				}
 				if (middleOfCard - 20 > windowBottom) {
 					// if card if over halfway off the bottom of screen, remove active class
-					card.querySelector("img").blur();
+					if(card.querySelector("img")) {
+						card.querySelector("img").blur();
+					}
 					card.blur();
 					card.classList.remove("active");
 				}
