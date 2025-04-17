@@ -106,8 +106,8 @@ let allCards = document.querySelectorAll(
 );
 
 allCards.forEach(card => {
+	//if card is not fully onscreen for mobile, or just on desktop, allow hover effect
 	card.addEventListener("mouseenter", () => {
-		//if card is not fully onscreen for mobile, allow hover effect
 		if (!card.classList.contains("onScreen")) {
 			card.classList.add("active");
 		}
