@@ -100,7 +100,7 @@ window.addEventListener("resize", setNavHeight);
 
 // --------- get viewport height and set as root variable for hero img height ----------
 function setVH() {
-	let viewportHeight = window.innerHeight;
+	let viewportHeight = window.outerHeight;
 	document.documentElement.style.setProperty("--viewport-height", `${viewportHeight}px`);
 }
 
