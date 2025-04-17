@@ -211,8 +211,8 @@ section {
 #hero .hero-container {
 	position: relative;
 	width: 100%;
-	min-height: 100svh;
-	max-height: 100svh;
+	/* min-height: 100svh; */
+	/* max-height: 100svh; */
 	/* min-height: 642px; */
 }
 
