@@ -21,6 +21,7 @@ html {
 	--btn-color: #fff;
 	--btn-bg: #a505a5;
 	--transparentish: rgba(0, 0, 0, 0.9);
+	--transparentish2: rgba(29, 29, 29, 0.9);
 	--smallest-font-size: 20px;
 	--regular-font-size: 24px;
 	--small-header-font-size: 32px;
@@ -522,13 +523,17 @@ a.call-btn:hover, a.call-btn:focus-visible {
 	font-size: var(--regular-font-size);
 	padding: 0 5px 5px;
 	border-radius: 10px;
-	background-color: var(--transparentish);
+	background-color: var(--transparentish2);
 	backdrop-filter: blur(10px);
 	color: var(--text-color);
 	text-align: center;
 	transition: 0.3s ease;
 	opacity: 1;
 }
+.services-list .card.active .service-img::after,
+.services-list .card:focus-visible .service-img::after {
+	background-color: var(--transparentish);
+} 
 .service-img.active::after,
 .service-img:focus-visible::after {
 	content: "";
@@ -1028,7 +1033,7 @@ section#faq {
 	overflow: hidden;
 	max-height: 0;
 	opacity: 0;
-	transition: max-height 0.4s ease, opacity 0.4s ease-out;
+	transition: max-height 0.3s ease, opacity 0.4s ease-out;
 }
 #faq .question-card.active .answer {
 	opacity: 1;
@@ -1252,6 +1257,9 @@ footer ul li {
 		border: none;
 		border-top: solid 3px var(--main-bg);
 		border-collapse: collapse;
+	}
+	#hero-footer .hero-footer-item:last-child {
+		border-bottom: solid 3px var(--main-bg);
 	}
 	.service-container {
 		width: 100%;
@@ -1512,13 +1520,6 @@ footer ul li {
 		border: 3px solid white;
 		color: white;
 		box-shadow: 0 0 25px var(--primary);
-	}
-	.service-img::after {
-		background-color: var(--transparentish2);
-	}
-	.services-list .card.active .service-img::after,
-	.services-list .card:focus-visible .service-img::after {
-		background-color: var(--transparentish);
 	}
 	.services-list a {
 		color: var(--secondary);

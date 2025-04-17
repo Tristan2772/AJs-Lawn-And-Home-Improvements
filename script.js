@@ -204,7 +204,6 @@ questions.forEach(question => {
 			//if open when clicked, close it
 			question.setAttribute("aria-expanded", "false");
 			parEl.classList.remove("active");
-			question.blur();
 		} else { 
 			//if closed when clicked, close other question cards
 			questionCards.forEach(card => {
