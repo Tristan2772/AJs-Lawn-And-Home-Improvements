@@ -168,11 +168,8 @@ function setActiveCard() {
 		});
 	}
 }
-
 document.addEventListener("scroll", setActiveCard);
 window.addEventListener("resize", setActiveCard);
-
-
 
 //on tap, change service img. on blur, change it back
 const imageBoxes = document.querySelectorAll(".service-img");
@@ -218,17 +215,3 @@ questions.forEach(question => {
 	});
 });
 
-
-allCards.forEach(card => {
-	//if card is not fully onscreen for mobile, or just on desktop, allow hover effect
-	card.addEventListener("mouseenter", () => {
-		if (!card.classList.contains("onScreen")) {
-			card.classList.add("active");
-		}
-	});
-	card.addEventListener("mouseleave", () => {
-		if (!card.classList.contains("onScreen")) {
-			card.classList.remove("active");
-		}
-	});
-});

@@ -984,19 +984,16 @@ section#faq {
 	border-radius: 25px;
 	background-color: var(--main-bg);
 }
-
 #faq .question-card:last-child {
 	margin-bottom: 0;
 }
-
-#faq .question-card:hover, 
 #faq .question-card:has(:focus-visible) {
 	border-color: var(--primary);
 }
 #faq .question {
 	text-align: left;
 	width: 100%;
-	color: inherit;
+	color: var(--text-color); 
 	padding: var(--md-pad);
 	list-style-type: none;
 	cursor: pointer;
@@ -1012,7 +1009,6 @@ section#faq {
 	transition: transform 0.3s ease, color 0.3s ease;
 }
 #faq .question-card.active .question p,
-#faq .question-card .question:hover p,
 #faq .question-card .question:focus-visible p {
 	color: var(--primary);
 }
@@ -1024,7 +1020,6 @@ section#faq {
 	transform: rotate(0deg);
 	color: var(--primary);
 }
-#faq .question-card .question:hover i,
 #faq .question-card .question:focus-visible i {
 	color: var(--primary);
 }
