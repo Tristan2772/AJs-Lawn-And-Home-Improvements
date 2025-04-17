@@ -202,19 +202,34 @@ questions.forEach(question => {
 		let parEl = question.parentElement;
 		if (isExpanded) {
 			//if open when clicked, close it
-			parEl.classList.remove("active");
 			question.setAttribute("aria-expanded", "false");
-			//if closed when clicked, close others and open the clicked one
-		} else {
-			//close other question cards
+			parEl.classList.remove("active");
+			question.blur();
+		} else { 
+			//if closed when clicked, close other question cards
 			questionCards.forEach(card => {
-				card.classList.remove("active");
 				let childEl = card.querySelector(".question");
 				childEl.setAttribute("aria-expanded", "false");
+				card.classList.remove("active");
 			});
 			//open this question card
 			parEl.classList.add("active");
 			question.setAttribute("aria-expanded", "true");
+		}
+	});
+});
+
+
+allCards.forEach(card => {
+	//if card is not fully onscreen for mobile, or just on desktop, allow hover effect
+	card.addEventListener("mouseenter", () => {
+		if (!card.classList.contains("onScreen")) {
+			card.classList.add("active");
+		}
+	});
+	card.addEventListener("mouseleave", () => {
+		if (!card.classList.contains("onScreen")) {
+			card.classList.remove("active");
 		}
 	});
 });

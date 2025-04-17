@@ -971,7 +971,7 @@ section#faq {
 	border: 3px solid var(--text-color);
 	border-radius: 25px;
 	line-height: var(--line-height);
-	transition: padding 0.3s ease, border-color 0.3s ease;
+	transition: padding 0.4s ease, border-color 0.4s ease;
 }
 #faq .question-card.active {
 	border-color: var(--primary);
@@ -996,7 +996,7 @@ section#faq {
 	list-style-type: none;
 	cursor: pointer;
 	font-size: var(--regular-font-size);
-	transition: color 0.3s ease;
+	transition: color 0.4s ease;
 	background-color: inherit;
 	border: none;
 	border-top-right-radius: 25px;
@@ -1013,7 +1013,7 @@ section#faq {
 }
 #faq .question-card .question i {
 	transform: rotate(-90deg);
-	transition: transform 0.3s ease, color 0.3s ease;
+	transition: transform 0.4s ease, color 0.4s ease;
 }
 #faq .question-card.active .question i {
 	transform: rotate(0deg);
