@@ -337,7 +337,6 @@ a.call-btn:hover, a.call-btn:focus-visible {
 	transition: 0.3s ease-in-out;
 	padding: var(--md-pad) 0;
 }
-.services-list .card:hover,
 .services-list .card.active,
 .services-list .card:focus-visible {
 	transform: scale(1.05);
@@ -591,7 +590,6 @@ div#odd {
 	margin: var(--center);
 	transition: 0.3s ease-in-out;
 }
-div#odd:hover,
 div#odd.active,
 div#odd:focus-visible {
 	transform: scale(1.05);
@@ -637,7 +635,6 @@ div#odd p {
 	border-radius: 25px;
 	transition: 0.3s ease-out;
 }
-.featured-container img:hover,
 .featured-container img.active{
 	transform: scale(1.1);
 	border: 3px solid var(--primary);
@@ -709,8 +706,6 @@ div#odd p {
 	padding: var(--reg-pad) var(--md-pad);
 	transition: 0.3s ease-in-out;
 }
-
-.expect-card:hover,
 .expect-card.active,
 .expect-card:focus-visible {
 	transform: scale(1.05);
@@ -772,7 +767,6 @@ div#odd p {
 	border: 3px solid var(--text-color);
 	transition: border-color 0.3s ease-out, transform 0.3s ease-out;
 }
-#why-container img:hover,
 #why-container img.active,
 #why-container img:focus-visible {
 	border-color: var(--primary);
@@ -822,7 +816,6 @@ div#odd p {
 	padding: var(--md-pad) 0;
 }
 
-.testimonial:hover,
 .testimonial.active,
 .testimonial:focus-visible {
 	border: 3px solid var(--primary);
@@ -1523,7 +1516,6 @@ footer ul li {
 	.service-img::after {
 		background-color: var(--transparentish2);
 	}
-	.services-list .card:hover .service-img::after,
 	.services-list .card.active .service-img::after,
 	.services-list .card:focus-visible .service-img::after {
 		background-color: var(--transparentish);

@@ -99,11 +99,25 @@ window.addEventListener("load", setNavHeight);
 window.addEventListener("resize", setNavHeight);
 
 
-// ------------- set cards as active when on sreen
+// ------------- set cards as active when on sreen or hovered with mouse
+let isScrolling;
 let allCards = document.querySelectorAll(
 	"#odd, .card, .featured-container img, .expect-card, .testimonial, #why-container img"
 );
-let isScrolling;
+
+allCards.forEach(card => {
+	card.addEventListener("mouseenter", () => {
+		//if card is not fully onscreen for mobile, allow hover effect
+		if (!card.classList.contains("onScreen")) {
+			card.classList.add("active");
+		}
+	});
+	card.addEventListener("mouseleave", () => {
+		if (!card.classList.contains("onScreen")) {
+			card.classList.remove("active");
+		}
+	});
+});
 
 function setActiveCard() {
 	let windowWidth = document.documentElement.clientWidth;
@@ -121,32 +135,36 @@ function setActiveCard() {
 				let middleOfCard = cardHeight / 2;
 				middleOfCard += topOfCard;
 
-				if (middleOfCard + 20 < windowBottom) {
+				if (middleOfCard + 20 < windowBottom && middleOfCard - 20 > windowTop) {
 					// if card is over halfway on the screen from the bottom, give it active class
 					card.classList.add("active");
+					card.classList.add("onScreen");
 					card.focus();
 				}
 				if (middleOfCard + 20 < windowTop) {
 					// if card if over halfway off the top of screen, remove active class
-					if(card.querySelector("img")) {
-						card.querySelector("img").blur();
+					if(card.querySelector(".service-img")) {
+						card.querySelector(".service-img").blur();
 					}
 					card.blur();
 					card.classList.remove("active");
+					card.classList.remove("onScreen");
 				}
 				if (middleOfCard - 20 > windowBottom) {
 					// if card if over halfway off the bottom of screen, remove active class
-					if(card.querySelector("img")) {
-						card.querySelector("img").blur();
+					if(card.querySelector(".service-img")) {
+						card.querySelector(".service-img").blur();
 					}
 					card.blur();
 					card.classList.remove("active");
+					card.classList.remove("onScreen");
 				}
 			});
 		}, 300);
 	} else {
 		allCards.forEach((card) => {
 			card.classList.remove("active");
+			card.classList.remove("onScreen");
 		});
 	}
 }
@@ -155,32 +173,6 @@ document.addEventListener("scroll", setActiveCard);
 window.addEventListener("resize", setActiveCard);
 
 
-// ---------------- FAQ --------------
-const questions = document.querySelectorAll(".question");
-const questionCards = document.querySelectorAll(".question-card");
-
-questions.forEach(question => {
-	question.addEventListener("click", () => {
-		const isExpanded = question.getAttribute("aria-expanded") === "true";
-		let parEl = question.parentElement;
-		//if open when clicked, close it
-		if (isExpanded) {
-			parEl.classList.remove("active");
-			question.setAttribute("aria-expanded", "false");
-			//if closed when clicked, close others and open the clicked one
-		} else {
-			//close other question cards
-			questionCards.forEach(card => {
-				card.classList.remove("active");
-				let childEl = card.querySelector(".question");
-				childEl.setAttribute("aria-expanded", "false");
-			});
-			//open this question card
-			parEl.classList.add("active");
-			question.setAttribute("aria-expanded", "true");
-		}
-	});
-});
 
 //on tap, change service img. on blur, change it back
 const imageBoxes = document.querySelectorAll(".service-img");
@@ -197,4 +189,35 @@ imageBoxes.forEach(imageBox => {
 	imageBox.addEventListener("blur", () => {
 		imageBox.classList.remove("active");
 	});
+});
+
+
+// ---------------- FAQ --------------
+const questions = document.querySelectorAll(".question");
+const questionCards = document.querySelectorAll(".question-card");
+
+questions.forEach(question => {
+	question.addEventListener("click", () => {
+		const isExpanded = question.getAttribute("aria-expanded") === "true";
+		let parEl = question.parentElement;
+		if (isExpanded) {
+			//if open when clicked, close it
+			parEl.classList.remove("active");
+			question.setAttribute("aria-expanded", "false");
+			//if closed when clicked, close others and open the clicked one
+		} else {
+			//close other question cards
+			questionCards.forEach(card => {
+				card.classList.remove("active");
+				let childEl = card.querySelector(".question");
+				childEl.setAttribute("aria-expanded", "false");
+			});
+			//open this question card
+			parEl.classList.add("active");
+			question.setAttribute("aria-expanded", "true");
+		}
+	});
+});
+document.addEventListener("pointerdown",  () => {
+	console.log(document.activeElement);
 });
