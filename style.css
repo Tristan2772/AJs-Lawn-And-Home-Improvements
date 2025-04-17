@@ -220,7 +220,7 @@ section {
 	background-repeat: no-repeat;
 	background-size: cover;
 	position: relative;
-	min-height: var(--viewport-height);
+	min-height: 642px;
 }
 
 #hero .hero-overlay {
